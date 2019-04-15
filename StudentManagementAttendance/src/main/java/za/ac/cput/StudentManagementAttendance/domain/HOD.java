@@ -1,37 +1,62 @@
 package za.ac.cput.StudentManagementAttendance.domain;
 
 public class HOD {
-    String memberName, memberSurname;
-    int memberID;
+    private String memberName, memberSurname;
+    private int memberID;
 
-    private String getMemberName() {
+    private HOD(Builder builder) {
+        this.memberName = builder.memberName;
+        this.memberSurname = builder.memberSurname;
+        this.memberID = builder.memberID;
+    }
+
+    public String getMemberName() {
         return memberName;
     }
 
-    private void setMemberName(String memberName) {
+    public void setMemberName(String memberName) {
         this.memberName = memberName;
     }
 
-    private String getMemberSurname() {
+    public String getMemberSurname() {
         return memberSurname;
     }
 
-    private void setMemberSurname(String memberSurname) {
+    public void setMemberSurname(String memberSurname) {
         this.memberSurname = memberSurname;
     }
 
-    private int getMemberID() {
+    public int getMemberID() {
         return memberID;
     }
 
-    private void setMemberID(int memberID) {
+    public void setMemberID(int memberID) {
         this.memberID = memberID;
     }
 
-    private HOD(String memberName, String memberSurname, int memberID) {
-        this.memberName = memberName;
-        this.memberSurname = memberSurname;
-        this.memberID = memberID;
+
+    public static class Builder {
+        String memberName, memberSurname;
+        int memberID;
+
+        public Builder memberName(String memberName) {
+            this.memberName = memberName;
+            return this;
+        }
+
+        public Builder memberID(int memberID) {
+            this.memberID = memberID;
+            return this;
+        }
+
+        public Builder memberSurname(String memberSurname) {
+            this.memberSurname = memberSurname;
+            return this;
+        }
+
+        public HOD build() {
+            return new HOD(this);
+        }
     }
 
     @Override

@@ -2,72 +2,106 @@ package za.ac.cput.StudentManagementAttendance.domain;
 
 /**
  * Hello world!
- *
  */
-public class Student
-{
-   String sName, sSurname, datesNotAttended;
-   int ssStudentNum, numNotAttended;
-   private Student(){
+public class Student {
+    private String sName, sSurname, datesNotAttended;
+    private int ssStudentNum, numNotAttended;
 
-   }
+    private Student() {
 
-   private Student(String sName, String sSurname, String datesNotAttended, int ssStudentNum, int numNotAttended) {
-      this.sName = sName;
-      this.sSurname = sSurname;
-      this.datesNotAttended = datesNotAttended;
-      this.ssStudentNum = ssStudentNum;
-      this.numNotAttended = numNotAttended;
-   }
+    }
 
-   private String getsName() {
-      return sName;
-   }
+    private Student(Builder builder) {
+        this.sName = builder.sName;
+        this.sSurname = builder.sSurname;
+        this.datesNotAttended = builder.datesNotAttended;
+        this.ssStudentNum = builder.ssStudentNum;
+        this.numNotAttended = builder.numNotAttended;
+    }
 
-   private void setsName(String sName) {
-      this.sName = sName;
-   }
+    public String getsName() {
+        return sName;
+    }
 
-   private String getsSurname() {
-      return sSurname;
-   }
+    public void setsName(String sName) {
+        this.sName = sName;
+    }
 
-   private void setsSurname(String sSurname) {
-      this.sSurname = sSurname;
-   }
+    public String getsSurname() {
+        return sSurname;
+    }
 
-   private String getDatesNotAttended() {
-      return datesNotAttended;
-   }
+    public void setsSurname(String sSurname) {
+        this.sSurname = sSurname;
+    }
 
-   private void setDatesNotAttended(String datesNotAttended) {
-      this.datesNotAttended = datesNotAttended;
-   }
+    public String getDatesNotAttended() {
+        return datesNotAttended;
+    }
 
-   private int getSsStudentNum() {
-      return ssStudentNum;
-   }
+    public void setDatesNotAttended(String datesNotAttended) {
+        this.datesNotAttended = datesNotAttended;
+    }
 
-   private void setSsStudentNum(int ssStudentNum) {
-      this.ssStudentNum = ssStudentNum;
-   }
+    public int getSsStudentNum() {
+        return ssStudentNum;
+    }
 
-   private int getNumNotAttended() {
-      return numNotAttended;
-   }
+    public void setSsStudentNum(int ssStudentNum) {
+        this.ssStudentNum = ssStudentNum;
+    }
 
-   private void setNumNotAttended(int numNotAttended) {
-      this.numNotAttended = numNotAttended;
-   }
+    public int getNumNotAttended() {
+        return numNotAttended;
+    }
 
-   @Override
-   public String toString() {
-      return "Student{" +
-              "sName='" + sName + '\'' +
-              ", sSurname='" + sSurname + '\'' +
-              ", datesNotAttended='" + datesNotAttended + '\'' +
-              ", ssStudentNum=" + ssStudentNum +
-              ", numNotAttended=" + numNotAttended +
-              '}';
-   }
+    public void setNumNotAttended(int numNotAttended) {
+        this.numNotAttended = numNotAttended;
+    }
+
+    public static class Builder {
+        String sName, sSurname, datesNotAttended;
+        int ssStudentNum, numNotAttended;
+
+        public Builder sName(String sName) {
+            this.sName = sName;
+            return this;
+        }
+
+        public Builder sSurname(String sSurname) {
+            this.sSurname = sSurname;
+            return this;
+        }
+
+        public Builder datesNotAttended(String datesNotAttended) {
+            this.datesNotAttended = datesNotAttended;
+            return this;
+        }
+
+        public Builder ssStudentNum(int ssStudentNum) {
+            this.ssStudentNum = ssStudentNum;
+            return this;
+        }
+
+        public Builder numNotAttended(int numNotAttended) {
+            this.numNotAttended = numNotAttended;
+            return this;
+        }
+
+        public Student build() {
+            return new Student(this);
+        }
+
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "sName='" + sName + '\'' +
+                ", sSurname='" + sSurname + '\'' +
+                ", datesNotAttended='" + datesNotAttended + '\'' +
+                ", ssStudentNum=" + ssStudentNum +
+                ", numNotAttended=" + numNotAttended +
+                '}';
+    }
 }

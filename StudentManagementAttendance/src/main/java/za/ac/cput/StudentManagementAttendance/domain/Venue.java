@@ -1,18 +1,31 @@
 package za.ac.cput.StudentManagementAttendance.domain;
 
 public class Venue {
-    int venueNumber;
+    private int venueNumber;
 
-    private Venue(int venueNumber) {
-        this.venueNumber = venueNumber;
+    private Venue(Builder builder) {
+        this.venueNumber = builder.venueNumber;
     }
 
-    private int getVenueNumber() {
+    public int getVenueNumber() {
         return venueNumber;
     }
 
-    private void setVenueNumber(int venueNumber) {
+    public void setVenueNumber(int venueNumber) {
         this.venueNumber = venueNumber;
+    }
+
+    public static class Builder {
+        int venueNumber;
+
+        public Builder venueNumber(int venueNumber) {
+            this.venueNumber = venueNumber;
+            return this;
+        }
+
+        public Venue build() {
+            return new Venue(this);
+        }
     }
 
     @Override
