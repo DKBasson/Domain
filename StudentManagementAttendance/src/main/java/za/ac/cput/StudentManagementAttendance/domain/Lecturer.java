@@ -1,38 +1,64 @@
 package za.ac.cput.StudentManagementAttendance.domain;
 
 public class Lecturer {
-    String lecturerName, lecturerSurname;
-    int lecturerID;
+    private String lecturerName, lecturerSurname;
+    private int lecturerID;
 
-    private String getLecturerName() {
+    private Lecturer(Builder builder) {
+        this.lecturerName = builder.lecturerName;
+        this.lecturerSurname = builder.lecturerSurname;
+        this.lecturerID = builder.lecturerID;
+    }
+
+    public String getLecturerName() {
         return lecturerName;
     }
 
-    private void setLecturerName(String lecturerName) {
+    public void setLecturerName(String lecturerName) {
         this.lecturerName = lecturerName;
     }
 
-    private String getLecturerSurname() {
+    public String getLecturerSurname() {
         return lecturerSurname;
     }
 
-    private void setLecturerSurname(String lecturerSurname) {
+    public void setLecturerSurname(String lecturerSurname) {
         this.lecturerSurname = lecturerSurname;
     }
 
-    private int getLecturerID() {
+    public int getLecturerID() {
         return lecturerID;
     }
 
-    private void setLecturerID(int lecturerID) {
+    public void setLecturerID(int lecturerID) {
         this.lecturerID = lecturerID;
     }
 
-    private Lecturer(String lecturerName, String lecturerSurname, int lecturerID) {
-        this.lecturerName = lecturerName;
-        this.lecturerSurname = lecturerSurname;
-        this.lecturerID = lecturerID;
+    public static class Builder {
+        String lecturerName, lecturerSurname;
+        int lecturerID;
+
+        public Builder lecturerName(String lecturerName) {
+            this.lecturerName = lecturerName;
+            return this;
+        }
+
+        public Builder lecturerSurname(String lecturerSurname) {
+            this.lecturerSurname = lecturerSurname;
+            return this;
+        }
+
+        public Builder lecturerID(int lecturerID) {
+            this.lecturerID = lecturerID;
+            return this;
+        }
+
+        public Lecturer build() {
+            return new Lecturer(this);
+        }
+
     }
+
 
     @Override
     public String toString() {

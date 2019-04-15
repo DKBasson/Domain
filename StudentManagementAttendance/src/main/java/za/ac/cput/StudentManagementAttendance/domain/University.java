@@ -1,37 +1,61 @@
 package za.ac.cput.StudentManagementAttendance.domain;
 
 public class University {
-    String universityName, universityAddress;
-    int universityID;
+    private String universityName, universityAddress;
+    private int universityID;
 
-    private University(String universityName, String universityAddress, int universityID) {
-        this.universityName = universityName;
-        this.universityAddress = universityAddress;
-        this.universityID = universityID;
+    private University(Builder builder) {
+        this.universityName = builder.universityName;
+        this.universityAddress = builder.universityAddress;
+        this.universityID = builder.universityID;
     }
 
-    private String getUniversityName() {
+    public String getUniversityName() {
         return universityName;
     }
 
-    private void setUniversityName(String universityName) {
+    public void setUniversityName(String universityName) {
         this.universityName = universityName;
     }
 
-    private String getUniversityAddress() {
+    public String getUniversityAddress() {
         return universityAddress;
     }
 
-    private void setUniversityAddress(String universityAddress) {
+    public void setUniversityAddress(String universityAddress) {
         this.universityAddress = universityAddress;
     }
 
-    private int getUniversityID() {
+    public int getUniversityID() {
         return universityID;
     }
 
-    private void setUniversityID(int universityID) {
+    public void setUniversityID(int universityID) {
         this.universityID = universityID;
+    }
+
+    public static class Builder {
+        String universityName, universityAddress;
+        int universityID;
+
+        public Builder universityName(String universityName) {
+            this.universityName = universityName;
+            return this;
+        }
+
+        public Builder universityAddress(String universityAddress) {
+            this.universityAddress = universityAddress;
+            return this;
+        }
+
+        public Builder universityID(int universityID) {
+            this.universityID = universityID;
+            return this;
+        }
+
+        public University build() {
+            return new University(this);
+        }
     }
 
     @Override
