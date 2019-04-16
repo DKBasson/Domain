@@ -2,12 +2,12 @@ package za.ac.cput.StudentManagementAttendance.domain;
 
 public class Lecturer {
     private String lecturerName, lecturerSurname;
-    private int lecturerID;
+    private int staffID;
 
     private Lecturer(Builder builder) {
         this.lecturerName = builder.lecturerName;
         this.lecturerSurname = builder.lecturerSurname;
-        this.lecturerID = builder.lecturerID;
+        this.staffID = builder.staffID;
     }
 
     public String getLecturerName() {
@@ -26,17 +26,17 @@ public class Lecturer {
         this.lecturerSurname = lecturerSurname;
     }
 
-    public int getLecturerID() {
-        return lecturerID;
+    public int getStaffID() {
+        return staffID;
     }
 
-    public void setLecturerID(int lecturerID) {
-        this.lecturerID = lecturerID;
+    public void setStaffID(int staffID) {
+        this.staffID = staffID;
     }
 
     public static class Builder {
         String lecturerName, lecturerSurname;
-        int lecturerID;
+        int staffID;
 
         public Builder lecturerName(String lecturerName) {
             this.lecturerName = lecturerName;
@@ -48,8 +48,8 @@ public class Lecturer {
             return this;
         }
 
-        public Builder lecturerID(int lecturerID) {
-            this.lecturerID = lecturerID;
+        public Builder staffID(int staffID) {
+            this.staffID = staffID;
             return this;
         }
 
@@ -65,7 +65,7 @@ public class Lecturer {
         return "Lecturer{" +
                 "lecturerName='" + lecturerName + '\'' +
                 ", lecturerSurname='" + lecturerSurname + '\'' +
-                ", lecturerID=" + lecturerID +
+                ", staffID=" + staffID +
                 '}';
     }
 }
