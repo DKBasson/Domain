@@ -7,7 +7,7 @@ import za.ac.cput.StudentManagementAttendance.domain.Student;
 public class StudentFactoryTest {
 
     @Test
-    public void testGetStudentr() throws Exception {
+    public void testGetStudent() throws Exception {
         String name = "Deklerk";
         String surname = "Basson";
         String datesNotAttended = "#2019-04-15#";
