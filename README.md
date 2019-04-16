@@ -6,4 +6,4 @@
 
 
 <h1>UML for StudentAttendanceManagementSystem</h1>
-<p><img src="https://dkbasson.com/wp-content/uploads/2019/04/Blank-Diagram-7.png" width="75%"</p>
+<p><img src="https://dkbasson.com/wp-content/uploads/2019/04/Blank-Diagram-7.png" width="100%"</p>
