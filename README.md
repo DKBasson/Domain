@@ -5,5 +5,12 @@
 <h1>Narrative of StudentAttendanceManagementSystem</h1>
 <p> This is where my Narrative will go. </p>
 
+<h1>Getting Started</h1>
+<p> These are the systems you would need to run the code
+
+<li>Any IDE preferably IntelliJ IDEA</li>
+<li>junit 4.11</li>
+<li>Maven</li></p>
+
 <h1>UML for StudentAttendanceManagementSystem</h1>
-<p><img src="https://dkbasson.com/wp-content/uploads/2019/04/Blank-Diagram-7.png" width="100%"</p>
+<p><img src="https://dkbasson.com/wp-content/uploads/2019/04/ERD-for-StudentAdmission.png" width="100%"</p>
