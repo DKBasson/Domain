@@ -1,5 +1,7 @@
 package za.ac.cput.StudentManagementAttendance.domain;
 
+import za.ac.cput.StudentManagementAttendance.domain.StudentTypes.ADStudent;
+
 /**
  * Hello world!
  */
@@ -7,11 +9,7 @@ public class Student {
     private String sName, sSurname, datesNotAttended;
     private int ssStudentNum, numNotAttended;
 
-    private Student() {
-
-    }
-
-    private Student(Builder builder) {
+    public Student(Builder builder) {
         this.sName = builder.sName;
         this.sSurname = builder.sSurname;
         this.datesNotAttended = builder.datesNotAttended;
@@ -59,7 +57,7 @@ public class Student {
         this.numNotAttended = numNotAttended;
     }
 
-    public static class Builder {
+    public static class Builder{
         String sName, sSurname, datesNotAttended;
         int ssStudentNum, numNotAttended;
 
