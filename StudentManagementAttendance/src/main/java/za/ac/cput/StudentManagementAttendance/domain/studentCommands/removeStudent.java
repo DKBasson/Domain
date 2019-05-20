@@ -15,7 +15,7 @@ public class removeStudent extends Student {
     }
     @Override
     public String toString() {
-        return "ADStudent{" +
+        return "removeStudent{" +
                 "sName='" + getsName() + '\'' +
                 ", sSurname='" + getsSurname() + '\'' +
                 ", datesNotAttended='" + getDatesNotAttended() + '\'' +

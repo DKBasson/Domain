@@ -1,26 +1,24 @@
 package za.ac.cput.StudentManagementAttendance.domain.punishmentTypes;
 
-import za.ac.cput.StudentManagementAttendance.domain.Student;
+import za.ac.cput.StudentManagementAttendance.domain.PunishmentIfBunkedAlot;
 
-public class Suspension extends Student {
+public class Suspension extends PunishmentIfBunkedAlot {
 
     private Suspension(Builder builder) {
         super(builder);
     }
 
-    public static class Builder extends Student.Builder {
+    public static class Builder extends PunishmentIfBunkedAlot.Builder {
         public Suspension build(){
             return new Suspension(this);
         }
     }
     @Override
     public String toString() {
-        return "ADStudent{" +
-                "sName='" + getsName() + '\'' +
-                ", sSurname='" + getsSurname() + '\'' +
-                ", datesNotAttended='" + getDatesNotAttended() + '\'' +
-                ", ssStudentNum=" + getSsStudentNum() +
-                ", numNotAttended=" + getNumNotAttended() +
+        return "Suspension{" +
+                "studentID='" + getStudentID() + '\'' +
+                ", punishmentID=" + getPunishmentID() +
                 '}';
     }
+
 }

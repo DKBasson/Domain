@@ -1,26 +1,85 @@
 package za.ac.cput.StudentManagementAttendance.domain;
 
-import za.ac.cput.StudentManagementAttendance.domain.punishmentTypes.Suspension;
+import java.util.Objects;
 
-public class StudentSponsor extends Student {
+public class StudentSponsor {
+    private String sName, sSurname, sponsorNum;
 
-    private StudentSponsor(StudentSponsor.Builder builder) {
-        super(builder);
+
+    public StudentSponsor(StudentSponsor.Builder builder) {
+        this.sName = builder.sName;
+        this.sSurname = builder.sSurname;
+        this.sponsorNum = builder.sponsorNum;
     }
 
-    public static class Builder extends Student.Builder {
-        public StudentSponsor build(){
+    public String getsName() {
+        return sName;
+    }
+
+    public void setsName(String sName) {
+        this.sName = sName;
+    }
+
+    public String getsSurname() {
+        return sSurname;
+    }
+
+    public void setsSurname(String sSurname) {
+        this.sSurname = sSurname;
+    }
+
+    public String getSponsorNum() {
+        return sponsorNum;
+    }
+
+    public void setSponsorNum(String sponsorNum) {
+        this.sponsorNum = sponsorNum;
+    }
+
+    public static class Builder {
+        String sName, sSurname;
+        String sponsorNum;
+
+        public StudentSponsor.Builder sName(String sName) {
+            this.sName = sName;
+            return this;
+        }
+
+        public StudentSponsor.Builder sSurname(String sSurname) {
+            this.sSurname = sSurname;
+            return this;
+        }
+
+       public StudentSponsor.Builder sponsorNum(String sponsorNum) {
+            this.sponsorNum = sponsorNum;
+            return this;
+        }
+
+        public StudentSponsor build() {
             return new StudentSponsor(this);
         }
+
     }
+
     @Override
     public String toString() {
-        return "ADStudent{" +
-                "sName='" + getsName() + '\'' +
-                ", sSurname='" + getsSurname() + '\'' +
-                ", datesNotAttended='" + getDatesNotAttended() + '\'' +
-                ", ssStudentNum=" + getSsStudentNum() +
-                ", numNotAttended=" + getNumNotAttended() +
+        return "StudentSponsor{" +
+                "sName='" + sName + '\'' +
+                ", sSurname='" + sSurname + '\'' +
+                ", sponsorNum=" + sponsorNum +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StudentSponsor ssponsor = (StudentSponsor) o;
+        return sponsorNum.equals(ssponsor.sponsorNum);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sponsorNum);
     }
 }

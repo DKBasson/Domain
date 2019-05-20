@@ -1,26 +1,56 @@
 package za.ac.cput.StudentManagementAttendance.domain;
 
-import za.ac.cput.StudentManagementAttendance.domain.punishmentTypes.Suspension;
+public class Subject {
+    private String subjectName;
+    private int subjectID;
 
-public class Subject extends Student {
-
-    private Subject(Subject.Builder builder) {
-        super(builder);
+    private Subject(Builder builder) {
+        this.subjectName = builder.subjectName;
+        this.subjectID = builder.subjectID;
     }
 
-    public static class Builder extends Student.Builder {
-        public Subject build(){
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
+    }
+
+    public int getSubjectID() {
+        return subjectID;
+    }
+
+    public void setSubjectID(int subjectID) {
+        this.subjectID = subjectID;
+    }
+
+    public static class Builder {
+        String subjectName;
+        int subjectID;
+
+        public Builder subjectName(String subjectName) {
+            this.subjectName = subjectName;
+            return this;
+        }
+
+        public Builder subjectID(int subjectID) {
+            this.subjectID = subjectID;
+            return this;
+        }
+
+        public Subject build() {
             return new Subject(this);
         }
+
     }
+
+
     @Override
     public String toString() {
-        return "ADStudent{" +
-                "sName='" + getsName() + '\'' +
-                ", sSurname='" + getsSurname() + '\'' +
-                ", datesNotAttended='" + getDatesNotAttended() + '\'' +
-                ", ssStudentNum=" + getSsStudentNum() +
-                ", numNotAttended=" + getNumNotAttended() +
+        return "Subject{" +
+                "subjectName='" + subjectName + '\'' +
+                ", subjectID=" + subjectID +
                 '}';
     }
 }

@@ -15,7 +15,7 @@ public class addStudent extends Student {
     }
     @Override
     public String toString() {
-        return "ADStudent{" +
+        return "addStudent{" +
                 "sName='" + getsName() + '\'' +
                 ", sSurname='" + getsSurname() + '\'' +
                 ", datesNotAttended='" + getDatesNotAttended() + '\'' +

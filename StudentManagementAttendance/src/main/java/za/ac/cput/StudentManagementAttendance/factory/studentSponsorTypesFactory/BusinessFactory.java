@@ -1,9 +1,10 @@
 package za.ac.cput.StudentManagementAttendance.factory.studentSponsorTypesFactory;
 
 import za.ac.cput.StudentManagementAttendance.domain.Student;
+import za.ac.cput.StudentManagementAttendance.domain.studentSponsorTypes.Business;
 
 public class BusinessFactory {
-    public static Student getStudent(String sName, String sSurname, String datesNotAttended, int ssStudentNumber, int numNotAttended) {
-        return new Student.Builder().sName(sName).sSurname(sSurname).datesNotAttended(datesNotAttended).ssStudentNum(ssStudentNumber).numNotAttended(numNotAttended).build();
+    public static Business getBusiness(String sName, String sSurname, String sponsorNum) {
+        return (Business) new Business.Builder().sName(sName).sSurname(sSurname).sponsorNum(sponsorNum).build();
     }
 }

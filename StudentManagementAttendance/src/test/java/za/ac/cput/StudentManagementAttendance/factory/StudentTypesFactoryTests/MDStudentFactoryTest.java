@@ -12,7 +12,7 @@ public class MDStudentFactoryTest {
         String name = "Deklerk";
         String surname = "Basson";
         String datesNotAttended = "#2019-04-15#";
-        int studentNumber = 216183006;
+        String studentNumber = "216183006";
         int numNotAttended = 1;
 
         MDStudent c = MDStudentPunishmentFactory.getMDStudent(name, surname, datesNotAttended, studentNumber, numNotAttended);

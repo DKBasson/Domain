@@ -1,36 +1,38 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.StudentPunishmentTypes;
 
 import za.ac.cput.StudentManagementAttendance.domain.Student;
+import za.ac.cput.StudentManagementAttendance.domain.StudentPunishmentTypes.ADStudentPunishment;
+import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentPunishmentTypes.ADStudentPunishmentRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentRepository;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class ADStudentPunishmentRepositoryImpl implements StudentRepository {
+public class ADStudentPunishmentRepositoryImpl implements ADStudentPunishmentRepository {
 
     private static ADStudentPunishmentRepositoryImpl repository = null;
-    private Set<Student> students;
+    private Set<ADStudentPunishment> students;
 
     private ADStudentPunishmentRepositoryImpl() {
         this.students = new HashSet<>();
     }
 
-    public static StudentRepository getRepository(){
+    public static ADStudentPunishmentRepository getRepository(){
         if(repository == null) repository = new ADStudentPunishmentRepositoryImpl();
         return repository;
     }
 
-    public Student create(Student student){
+    public ADStudentPunishment create(ADStudentPunishment student){
         this.students.add(student);
         return student;
     }
 
-    public Student read(String studentId){
+    public ADStudentPunishment read(String studentId){
         //find the student in the set and return it if it exist
         return null;
     }
 
-    public Student update(Student student) {
+    public ADStudentPunishment update(ADStudentPunishment student) {
         // find the student, update it and return the updated student
         return null;
     }
@@ -40,7 +42,7 @@ public class ADStudentPunishmentRepositoryImpl implements StudentRepository {
 
     }
 
-    public Set<Student> getAll(){
+    public Set<ADStudentPunishment> getAll(){
         return this.students;
     }
 }

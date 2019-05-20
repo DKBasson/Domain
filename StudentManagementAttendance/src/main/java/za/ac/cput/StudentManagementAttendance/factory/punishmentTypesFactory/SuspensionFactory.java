@@ -1,9 +1,10 @@
 package za.ac.cput.StudentManagementAttendance.factory.punishmentTypesFactory;
 
 import za.ac.cput.StudentManagementAttendance.domain.Student;
+import za.ac.cput.StudentManagementAttendance.domain.punishmentTypes.Suspension;
 
 public class SuspensionFactory {
-    public static Student getStudent(String sName, String sSurname, String datesNotAttended, int ssStudentNumber, int numNotAttended) {
-        return new Student.Builder().sName(sName).sSurname(sSurname).datesNotAttended(datesNotAttended).ssStudentNum(ssStudentNumber).numNotAttended(numNotAttended).build();
+    public static Suspension getSuspension(String studentID, int punishmentID) {
+        return (Suspension) new Suspension.Builder().studentID(studentID).punishmentID(punishmentID).build();
     }
 }
