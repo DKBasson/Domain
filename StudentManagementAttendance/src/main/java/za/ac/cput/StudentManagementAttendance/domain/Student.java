@@ -2,12 +2,14 @@ package za.ac.cput.StudentManagementAttendance.domain;
 
 import za.ac.cput.StudentManagementAttendance.domain.StudentTypes.ADStudent;
 
+import java.util.Objects;
+
 /**
  * Hello world!
  */
 public class Student {
-    private String sName, sSurname, datesNotAttended;
-    private int ssStudentNum, numNotAttended;
+    private String sName, sSurname, datesNotAttended, ssStudentNum;
+    private int numNotAttended;
 
     public Student(Builder builder) {
         this.sName = builder.sName;
@@ -41,11 +43,11 @@ public class Student {
         this.datesNotAttended = datesNotAttended;
     }
 
-    public int getSsStudentNum() {
+    public String getSsStudentNum() {
         return ssStudentNum;
     }
 
-    public void setSsStudentNum(int ssStudentNum) {
+    public void setSsStudentNum(String ssStudentNum) {
         this.ssStudentNum = ssStudentNum;
     }
 
@@ -59,7 +61,8 @@ public class Student {
 
     public static class Builder{
         String sName, sSurname, datesNotAttended;
-        int ssStudentNum, numNotAttended;
+        String ssStudentNum;
+        int numNotAttended;
 
         public Builder sName(String sName) {
             this.sName = sName;
@@ -76,7 +79,7 @@ public class Student {
             return this;
         }
 
-        public Builder ssStudentNum(int ssStudentNum) {
+        public Builder ssStudentNum(String ssStudentNum) {
             this.ssStudentNum = ssStudentNum;
             return this;
         }
@@ -101,5 +104,17 @@ public class Student {
                 ", ssStudentNum=" + ssStudentNum +
                 ", numNotAttended=" + numNotAttended +
                 '}';
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student studentVar = (Student) o;
+        return ssStudentNum.equals(studentVar.ssStudentNum);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ssStudentNum);
     }
 }

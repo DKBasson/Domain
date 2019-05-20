@@ -10,7 +10,7 @@ public void testGetStudent() throws Exception {
     String name = "Deklerk";
     String surname = "Basson";
     String datesNotAttended = "#2019-04-15#";
-    int studentNumber = 216183006;
+        String studentNumber = "216183006";
     int numNotAttended = 1;
 
     Student c = StudentFactory.getStudent(name, surname, datesNotAttended, studentNumber, numNotAttended);

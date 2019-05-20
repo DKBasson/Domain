@@ -1,26 +1,57 @@
 package za.ac.cput.StudentManagementAttendance.domain;
 
-import za.ac.cput.StudentManagementAttendance.domain.punishmentTypes.Suspension;
+    public class Attendance {
+        private String studentID;
+        private int daysMissed;
 
-public class Attendance extends Student {
+        public Attendance(Builder builder) {
+            this.studentID = builder.studentID;
+            this.daysMissed = builder.daysMissed;
+        }
 
-    private Attendance(Attendance.Builder builder) {
-        super(builder);
-    }
+        public String getStudentID() {
+            return studentID;
+        }
 
-    public static class Builder extends Student.Builder {
-        public Attendance build(){
-            return new Attendance(this);
+        public void setStudentID(String studentID) {
+            this.studentID = studentID;
+        }
+
+        public int getPunishmentID() {
+            return daysMissed;
+        }
+
+        public void setPunishmentID(int daysMissed) {
+            this.daysMissed = daysMissed;
+        }
+
+
+        public static class Builder {
+            String studentID;
+            int daysMissed;
+
+            public Builder studentID(String studentID) {
+                this.studentID = studentID;
+                return this;
+            }
+
+            public Builder daysMissed(int daysMissed) {
+                this.daysMissed = daysMissed;
+                return this;
+            }
+
+            public Attendance build() {
+                return new Attendance(this);
+            }
+        }
+
+        @Override
+        public String toString() {
+            return "PunishmentIfBunkedAlot{" +
+                    "studentID='" + studentID + '\'' +
+                    ", daysMissed=" + daysMissed +
+                    '}';
         }
     }
-    @Override
-    public String toString() {
-        return "ADStudent{" +
-                "sName='" + getsName() + '\'' +
-                ", sSurname='" + getsSurname() + '\'' +
-                ", datesNotAttended='" + getDatesNotAttended() + '\'' +
-                ", ssStudentNum=" + getSsStudentNum() +
-                ", numNotAttended=" + getNumNotAttended() +
-                '}';
-    }
-}
+
+
