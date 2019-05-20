@@ -2,19 +2,24 @@ package za.ac.cput.StudentManagementAttendance.repository.impl.StudentTypes;
 
 import za.ac.cput.StudentManagementAttendance.domain.StudentTypes.DDStudent;
 import za.ac.cput.StudentManagementAttendance.domain.StudentTypes.MDStudent;
+import za.ac.cput.StudentManagementAttendance.domain.studentCommands.removeStudent;
+import za.ac.cput.StudentManagementAttendance.repository.impl.studentCommands.removeStudentRepositoryImpl;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentTypes.DDStudentRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentTypes.MDStudentRepository;
+import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class DDStudentRepositoryImpl implements DDStudentRepository {
 
     private static DDStudentRepository repository = null;
-    private Set<DDStudent> ddStudents;
+    private Map<String, DDStudent> students;
 
     private DDStudentRepositoryImpl() {
-        this.ddStudents = new HashSet<>();
+        this.students = (Map<String, DDStudent>) new HashSet<>();
     }
 
     public static DDStudentRepository getRepository(){
@@ -23,26 +28,29 @@ public class DDStudentRepositoryImpl implements DDStudentRepository {
     }
 
     public DDStudent create(DDStudent student){
-        this.ddStudents.add(student);
+        this.students.put(student.getSsStudentNum(), student);
         return student;
     }
 
     public DDStudent read(String studentId){
-        //find the student in the set and return it if it exist
-        return null;
+        return this.students.get(studentId);
     }
 
     public DDStudent update(DDStudent student) {
-        // find the student, update it and return the updated student
-        return null;
+        this.students.replace(student.getSsStudentNum(), student);
+        return this.students.get(student.getSsStudentNum());
     }
 
     public void delete(String studentId) {
-        //find the student and delete it if it exists
+        this.students.remove(studentId);
 
     }
 
     public Set<DDStudent> getAll(){
-        return this.ddStudents;
-    }
-}
+        Collection<DDStudent> students = this.students.values();
+        Set<DDStudent> set = new HashSet<>();
+        set.addAll(students);
+        return set;
+    }}
+
+

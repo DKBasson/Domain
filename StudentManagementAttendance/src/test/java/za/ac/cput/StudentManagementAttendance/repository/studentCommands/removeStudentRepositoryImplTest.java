@@ -3,11 +3,10 @@ package za.ac.cput.StudentManagementAttendance.repository.studentCommands;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import za.ac.cput.StudentManagementAttendance.domain.Student;
-import za.ac.cput.StudentManagementAttendance.repository.impl.StudentRepositoryImpl;
-import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentRepository;
+import za.ac.cput.StudentManagementAttendance.domain.mains.Student;
+import za.ac.cput.StudentManagementAttendance.repository.impl.mains.StudentRepositoryImpl;
+import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.StudentRepository;
 
-import java.util.HashSet;
 import java.util.Set;
 
 public class removeStudentRepositoryImplTest {

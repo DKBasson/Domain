@@ -1,7 +1,5 @@
 package za.ac.cput.StudentManagementAttendance.factory.studentSponsorTypesFactory;
 
-import za.ac.cput.StudentManagementAttendance.domain.Student;
-import za.ac.cput.StudentManagementAttendance.domain.studentSponsorTypes.Business;
 import za.ac.cput.StudentManagementAttendance.domain.studentSponsorTypes.Parent;
 
 public class ParentFactory {

@@ -1,6 +1,5 @@
 package za.ac.cput.StudentManagementAttendance.factory.studentCommandsFactory;
 
-import za.ac.cput.StudentManagementAttendance.domain.Student;
 import za.ac.cput.StudentManagementAttendance.domain.studentCommands.addStudent;
 
 public class addStudentFactory {

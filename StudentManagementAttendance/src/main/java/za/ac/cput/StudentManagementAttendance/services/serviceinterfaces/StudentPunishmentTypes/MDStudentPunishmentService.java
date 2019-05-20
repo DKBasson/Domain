@@ -1,0 +1,1 @@
+package za.ac.cput.StudentManagementAttendance.services.serviceinterfaces.StudentPunishmentTypes;

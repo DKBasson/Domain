@@ -1,6 +1,6 @@
 package za.ac.cput.StudentManagementAttendance.domain.punishmentTypes;
 
-import za.ac.cput.StudentManagementAttendance.domain.PunishmentIfBunkedAlot;
+import za.ac.cput.StudentManagementAttendance.domain.mains.PunishmentIfBunkedAlot;
 
 public class Suspension extends PunishmentIfBunkedAlot {
 

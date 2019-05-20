@@ -1,20 +1,23 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.StudentPunishmentTypes;
 
-import za.ac.cput.StudentManagementAttendance.domain.Student;
 import za.ac.cput.StudentManagementAttendance.domain.StudentPunishmentTypes.ADStudentPunishment;
+import za.ac.cput.StudentManagementAttendance.domain.studentCommands.removeStudent;
+import za.ac.cput.StudentManagementAttendance.repository.impl.studentCommands.removeStudentRepositoryImpl;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentPunishmentTypes.ADStudentPunishmentRepository;
-import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentRepository;
+import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class ADStudentPunishmentRepositoryImpl implements ADStudentPunishmentRepository {
 
     private static ADStudentPunishmentRepositoryImpl repository = null;
-    private Set<ADStudentPunishment> students;
+    private Map<String, ADStudentPunishment> students;
 
     private ADStudentPunishmentRepositoryImpl() {
-        this.students = new HashSet<>();
+        this.students = (Map<String, ADStudentPunishment>) new HashSet<>();
     }
 
     public static ADStudentPunishmentRepository getRepository(){
@@ -23,26 +26,28 @@ public class ADStudentPunishmentRepositoryImpl implements ADStudentPunishmentRep
     }
 
     public ADStudentPunishment create(ADStudentPunishment student){
-        this.students.add(student);
+        this.students.put(student.getPunishmentID(), student);
         return student;
     }
 
     public ADStudentPunishment read(String studentId){
-        //find the student in the set and return it if it exist
-        return null;
+        return this.students.get(studentId);
     }
 
     public ADStudentPunishment update(ADStudentPunishment student) {
-        // find the student, update it and return the updated student
-        return null;
+        this.students.replace(student.getPunishmentID(), student);
+        return this.students.get(student.getPunishmentID());
     }
 
     public void delete(String studentId) {
-        //find the student and delete it if it exists
+        this.students.remove(studentId);
 
     }
 
     public Set<ADStudentPunishment> getAll(){
-        return this.students;
-    }
-}
+        Collection<ADStudentPunishment> students = this.students.values();
+        Set<ADStudentPunishment> set = new HashSet<>();
+        set.addAll(students);
+        return set;
+    }}
+

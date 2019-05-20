@@ -3,12 +3,9 @@ package za.ac.cput.StudentManagementAttendance.repository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import za.ac.cput.StudentManagementAttendance.domain.Person;
-import za.ac.cput.StudentManagementAttendance.domain.University;
-import za.ac.cput.StudentManagementAttendance.repository.impl.PersonRepositoryImpl;
-import za.ac.cput.StudentManagementAttendance.repository.impl.UniversityRepositoryImpl;
-import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.PersonRepository;
-import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.UniversityRepository;
+import za.ac.cput.StudentManagementAttendance.domain.mains.University;
+import za.ac.cput.StudentManagementAttendance.repository.impl.mains.UniversityRepositoryImpl;
+import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.UniversityRepository;
 
 import java.util.Set;
 

@@ -1,18 +1,23 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.StudentTypes;
 
 import za.ac.cput.StudentManagementAttendance.domain.StudentTypes.ADStudent;
+import za.ac.cput.StudentManagementAttendance.domain.studentCommands.removeStudent;
+import za.ac.cput.StudentManagementAttendance.repository.impl.studentCommands.removeStudentRepositoryImpl;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentTypes.ADStudentRepository;
+import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class ADStudentRepositoryImpl implements ADStudentRepository {
 
     private static ADStudentRepository repository = null;
-    private Set<ADStudent> adStudents;
+    private Map<String, ADStudent> students;
 
     private ADStudentRepositoryImpl() {
-        this.adStudents = new HashSet<>();
+        this.students = (Map<String, ADStudent>) new HashSet<>();
     }
 
     public static ADStudentRepository getRepository(){
@@ -21,26 +26,29 @@ public class ADStudentRepositoryImpl implements ADStudentRepository {
     }
 
     public ADStudent create(ADStudent student){
-        this.adStudents.add(student);
+        this.students.put(student.getSsStudentNum(), student);
         return student;
     }
 
     public ADStudent read(String studentId){
-        //find the student in the set and return it if it exist
-        return null;
+        return this.students.get(studentId);
     }
 
     public ADStudent update(ADStudent student) {
-        // find the student, update it and return the updated student
-        return null;
+        this.students.replace(student.getSsStudentNum(), student);
+        return this.students.get(student.getSsStudentNum());
     }
 
     public void delete(String studentId) {
-        //find the student and delete it if it exists
+        this.students.remove(studentId);
 
     }
 
     public Set<ADStudent> getAll(){
-        return this.adStudents;
-    }
-}
+        Collection<ADStudent> students = this.students.values();
+        Set<ADStudent> set = new HashSet<>();
+        set.addAll(students);
+        return set;
+    }}
+
+
