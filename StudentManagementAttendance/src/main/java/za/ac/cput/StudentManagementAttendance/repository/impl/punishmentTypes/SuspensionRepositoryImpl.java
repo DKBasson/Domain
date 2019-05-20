@@ -1,20 +1,22 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.punishmentTypes;
 
-import za.ac.cput.StudentManagementAttendance.domain.Student;
+import za.ac.cput.StudentManagementAttendance.domain.punishmentTypes.Expulsion;
 import za.ac.cput.StudentManagementAttendance.domain.punishmentTypes.Suspension;
-import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentRepository;
+import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.punishmentTypes.ExpulsionRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.punishmentTypes.SuspensionRepository;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class SuspensionRepositoryImpl implements SuspensionRepository {
 
     private static SuspensionRepositoryImpl repository = null;
-    private Set<Suspension> students;
+    private Map<String, Suspension> students;
 
     private SuspensionRepositoryImpl() {
-        this.students = new HashSet<>();
+        this.students = (Map<String, Suspension>) new HashSet<>();
     }
 
     public static SuspensionRepository getRepository(){
@@ -23,26 +25,28 @@ public class SuspensionRepositoryImpl implements SuspensionRepository {
     }
 
     public Suspension create(Suspension student){
-        this.students.add(student);
+        this.students.put(student.getStudentID(), student);
         return student;
     }
 
     public Suspension read(String studentId){
-        //find the student in the set and return it if it exist
-        return null;
+        return this.students.get(studentId);
     }
 
     public Suspension update(Suspension student) {
-        // find the student, update it and return the updated student
-        return null;
+        this.students.replace(student.getStudentID(), student);
+        return this.students.get(student.getStudentID());
     }
 
     public void delete(String studentId) {
-        //find the student and delete it if it exists
+        this.students.remove(studentId);
 
     }
 
     public Set<Suspension> getAll(){
-        return this.students;
-    }
-}
+        Collection<Suspension> students = this.students.values();
+        Set<Suspension> set = new HashSet<>();
+        set.addAll(students);
+        return set;
+    }}
+

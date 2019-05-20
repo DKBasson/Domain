@@ -1,6 +1,6 @@
 package za.ac.cput.StudentManagementAttendance.domain.studentCommands;
 
-import za.ac.cput.StudentManagementAttendance.domain.Student;
+import za.ac.cput.StudentManagementAttendance.domain.mains.Student;
 
 public class removeStudent extends Student {
 

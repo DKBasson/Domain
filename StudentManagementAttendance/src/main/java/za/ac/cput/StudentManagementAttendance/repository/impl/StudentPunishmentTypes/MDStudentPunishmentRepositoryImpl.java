@@ -1,20 +1,25 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.StudentPunishmentTypes;
 
-import za.ac.cput.StudentManagementAttendance.domain.Student;
+import za.ac.cput.StudentManagementAttendance.domain.StudentPunishmentTypes.DDStudentPunishment;
 import za.ac.cput.StudentManagementAttendance.domain.StudentPunishmentTypes.MDStudentPunishment;
+import za.ac.cput.StudentManagementAttendance.domain.studentCommands.removeStudent;
+import za.ac.cput.StudentManagementAttendance.repository.impl.studentCommands.removeStudentRepositoryImpl;
+import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentPunishmentTypes.DDStudentPunishmentRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentPunishmentTypes.MDStudentPunishmentRepository;
-import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentRepository;
+import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class MDStudentPunishmentRepositoryImpl implements MDStudentPunishmentRepository {
 
     private static MDStudentPunishmentRepositoryImpl repository = null;
-    private Set<MDStudentPunishment> students;
+    private Map<String, MDStudentPunishment> students;
 
     private MDStudentPunishmentRepositoryImpl() {
-        this.students = new HashSet<>();
+        this.students = (Map<String, MDStudentPunishment>) new HashSet<>();
     }
 
     public static MDStudentPunishmentRepository getRepository(){
@@ -23,26 +28,28 @@ public class MDStudentPunishmentRepositoryImpl implements MDStudentPunishmentRep
     }
 
     public MDStudentPunishment create(MDStudentPunishment student){
-        this.students.add(student);
+        this.students.put(student.getPunishmentID(), student);
         return student;
     }
 
     public MDStudentPunishment read(String studentId){
-        //find the student in the set and return it if it exist
-        return null;
+        return this.students.get(studentId);
     }
 
     public MDStudentPunishment update(MDStudentPunishment student) {
-        // find the student, update it and return the updated student
-        return null;
+        this.students.replace(student.getPunishmentID(), student);
+        return this.students.get(student.getPunishmentID());
     }
 
     public void delete(String studentId) {
-        //find the student and delete it if it exists
+        this.students.remove(studentId);
 
     }
 
     public Set<MDStudentPunishment> getAll(){
-        return this.students;
-    }
-}
+        Collection<MDStudentPunishment> students = this.students.values();
+        Set<MDStudentPunishment> set = new HashSet<>();
+        set.addAll(students);
+        return set;
+    }}
+

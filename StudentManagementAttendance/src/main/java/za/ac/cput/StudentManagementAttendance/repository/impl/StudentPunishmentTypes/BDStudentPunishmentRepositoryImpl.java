@@ -1,20 +1,25 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.StudentPunishmentTypes;
 
-import za.ac.cput.StudentManagementAttendance.domain.Student;
+import za.ac.cput.StudentManagementAttendance.domain.StudentPunishmentTypes.ADStudentPunishment;
 import za.ac.cput.StudentManagementAttendance.domain.StudentPunishmentTypes.BDStudentPunishment;
+import za.ac.cput.StudentManagementAttendance.domain.studentCommands.removeStudent;
+import za.ac.cput.StudentManagementAttendance.repository.impl.studentCommands.removeStudentRepositoryImpl;
+import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentPunishmentTypes.ADStudentPunishmentRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentPunishmentTypes.BDStudentPunishmentRepository;
-import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentRepository;
+import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class BDStudentPunishmentRepositoryImpl implements BDStudentPunishmentRepository {
 
     private static BDStudentPunishmentRepositoryImpl repository = null;
-    private Set<BDStudentPunishment> students;
+    private Map<String, BDStudentPunishment> students;
 
     private BDStudentPunishmentRepositoryImpl() {
-        this.students = new HashSet<>();
+        this.students = (Map<String, BDStudentPunishment>) new HashSet<>();
     }
 
     public static BDStudentPunishmentRepository getRepository(){
@@ -23,26 +28,28 @@ public class BDStudentPunishmentRepositoryImpl implements BDStudentPunishmentRep
     }
 
     public BDStudentPunishment create(BDStudentPunishment student){
-        this.students.add(student);
+        this.students.put(student.getPunishmentID(), student);
         return student;
     }
 
     public BDStudentPunishment read(String studentId){
-        //find the student in the set and return it if it exist
-        return null;
+        return this.students.get(studentId);
     }
 
     public BDStudentPunishment update(BDStudentPunishment student) {
-        // find the student, update it and return the updated student
-        return null;
+        this.students.replace(student.getPunishmentID(), student);
+        return this.students.get(student.getPunishmentID());
     }
 
     public void delete(String studentId) {
-        //find the student and delete it if it exists
+        this.students.remove(studentId);
 
     }
 
     public Set<BDStudentPunishment> getAll(){
-        return this.students;
-    }
-}
+        Collection<BDStudentPunishment> students = this.students.values();
+        Set<BDStudentPunishment> set = new HashSet<>();
+        set.addAll(students);
+        return set;
+    }}
+

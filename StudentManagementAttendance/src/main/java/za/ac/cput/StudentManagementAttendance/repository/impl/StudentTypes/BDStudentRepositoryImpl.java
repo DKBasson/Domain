@@ -2,19 +2,24 @@ package za.ac.cput.StudentManagementAttendance.repository.impl.StudentTypes;
 
 import za.ac.cput.StudentManagementAttendance.domain.StudentTypes.ADStudent;
 import za.ac.cput.StudentManagementAttendance.domain.StudentTypes.BDStudent;
+import za.ac.cput.StudentManagementAttendance.domain.studentCommands.removeStudent;
+import za.ac.cput.StudentManagementAttendance.repository.impl.studentCommands.removeStudentRepositoryImpl;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentTypes.ADStudentRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentTypes.BDStudentRepository;
+import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class BDStudentRepositoryImpl implements BDStudentRepository {
 
     private static BDStudentRepository repository = null;
-    private Set<BDStudent> bdStudents;
+    private Map<String, BDStudent> students;
 
     private BDStudentRepositoryImpl() {
-        this.bdStudents = new HashSet<>();
+        this.students = (Map<String, BDStudent>) new HashSet<>();
     }
 
     public static BDStudentRepository getRepository(){
@@ -23,26 +28,29 @@ public class BDStudentRepositoryImpl implements BDStudentRepository {
     }
 
     public BDStudent create(BDStudent student){
-        this.bdStudents.add(student);
+        this.students.put(student.getSsStudentNum(), student);
         return student;
     }
 
     public BDStudent read(String studentId){
-        //find the student in the set and return it if it exist
-        return null;
+        return this.students.get(studentId);
     }
 
     public BDStudent update(BDStudent student) {
-        // find the student, update it and return the updated student
-        return null;
+        this.students.replace(student.getSsStudentNum(), student);
+        return this.students.get(student.getSsStudentNum());
     }
 
     public void delete(String studentId) {
-        //find the student and delete it if it exists
+        this.students.remove(studentId);
 
     }
 
     public Set<BDStudent> getAll(){
-        return this.bdStudents;
-    }
-}
+        Collection<BDStudent> students = this.students.values();
+        Set<BDStudent> set = new HashSet<>();
+        set.addAll(students);
+        return set;
+    }}
+
+

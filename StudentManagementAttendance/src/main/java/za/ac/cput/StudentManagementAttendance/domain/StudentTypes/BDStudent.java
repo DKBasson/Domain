@@ -1,6 +1,6 @@
 package za.ac.cput.StudentManagementAttendance.domain.StudentTypes;
 
-import za.ac.cput.StudentManagementAttendance.domain.Student;
+import za.ac.cput.StudentManagementAttendance.domain.mains.Student;
 
 public class BDStudent extends Student {
 

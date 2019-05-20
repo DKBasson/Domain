@@ -1,7 +1,6 @@
 package za.ac.cput.StudentManagementAttendance.domain.studentSponsorTypes;
 
-import za.ac.cput.StudentManagementAttendance.domain.Student;
-import za.ac.cput.StudentManagementAttendance.domain.StudentSponsor;
+import za.ac.cput.StudentManagementAttendance.domain.mains.StudentSponsor;
 
 public class Business extends StudentSponsor {
 
