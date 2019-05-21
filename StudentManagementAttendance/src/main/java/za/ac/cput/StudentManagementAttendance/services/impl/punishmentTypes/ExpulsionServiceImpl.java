@@ -3,15 +3,16 @@ package za.ac.cput.StudentManagementAttendance.services.impl.punishmentTypes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import za.ac.cput.StudentManagementAttendance.domain.punishmentTypes.Expulsion;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.punishmentTypes.ExpulsionRepository;
 import za.ac.cput.StudentManagementAttendance.services.serviceinterfaces.punishmentTypes.ExpulsionService;
 
 import java.util.*;
-
+@Service("ExpulsionServiceImpl")
 public class ExpulsionServiceImpl implements ExpulsionService {
     @Autowired
-    @Qualifier("InMemory")
+    @Qualifier("ExpulsionRepository")
     private ExpulsionRepository repository;
 
     @Override

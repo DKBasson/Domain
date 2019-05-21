@@ -8,10 +8,10 @@ import za.ac.cput.StudentManagementAttendance.domain.mains.Student;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.StudentRepository;
 
 import java.util.*;
-@Service("ServiceImpl")
+@Service("StudentServiceImpl")
 public class StudentServiceImpl implements StudentRepository {
     @Autowired
-    @Qualifier("InMemory")
+    @Qualifier("StudentRepository")
     private StudentRepository repository;
 
     @Override

@@ -3,15 +3,16 @@ package za.ac.cput.StudentManagementAttendance.services.impl.studentSponsorTypes
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import za.ac.cput.StudentManagementAttendance.domain.studentSponsorTypes.Business;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentSponsorTypes.BusinessRepository;
 import za.ac.cput.StudentManagementAttendance.services.serviceinterfaces.studentSponsorTypes.BusinessService;
 
 import java.util.*;
-
+@Service("BusinessServiceImpl")
 public class BusinessServiceImpl implements BusinessService{
     @Autowired
-    @Qualifier("InMemory")
+    @Qualifier("BusinessRepository")
     private BusinessRepository repository;
 
     @Override

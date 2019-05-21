@@ -8,7 +8,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentT
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 
 import java.util.*;
-
+@Repository("ADStudentRepository")
 public class ADStudentRepositoryImpl implements ADStudentRepository {
 
     private static ADStudentRepository repository = null;

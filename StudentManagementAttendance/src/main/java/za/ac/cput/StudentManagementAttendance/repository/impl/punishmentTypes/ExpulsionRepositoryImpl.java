@@ -8,7 +8,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.Ve
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.punishmentTypes.ExpulsionRepository;
 
 import java.util.*;
-
+@Repository("ExpulsionRepository")
 public class ExpulsionRepositoryImpl implements ExpulsionRepository {
 
     private static ExpulsionRepositoryImpl repository = null;

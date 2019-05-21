@@ -3,15 +3,16 @@ package za.ac.cput.StudentManagementAttendance.services.impl.studentCommands;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import za.ac.cput.StudentManagementAttendance.domain.studentCommands.removeStudent;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 import za.ac.cput.StudentManagementAttendance.services.serviceinterfaces.studentCommands.removeStudentService;
 
 import java.util.*;
-
+@Service("removeStudentServiceImpl")
 public class removeStudentServiceImpl implements removeStudentService {
     @Autowired
-    @Qualifier("InMemory")
+    @Qualifier("removeStudentRepository")
     private removeStudentRepository repository;
 
     @Override

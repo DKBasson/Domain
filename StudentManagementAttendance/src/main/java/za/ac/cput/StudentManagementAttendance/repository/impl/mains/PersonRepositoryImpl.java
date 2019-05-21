@@ -5,7 +5,7 @@ import za.ac.cput.StudentManagementAttendance.domain.mains.Person;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.PersonRepository;
 
 import java.util.*;
-
+@Repository("PersonRepository")
 public class PersonRepositoryImpl implements PersonRepository {
 
     private static PersonRepositoryImpl repository = null;

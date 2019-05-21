@@ -11,7 +11,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentC
 
 import java.util.*;
 
-
+@Repository("BDStudentPunishmentRepository")
 public class BDStudentPunishmentRepositoryImpl implements BDStudentPunishmentRepository {
 
     private static BDStudentPunishmentRepositoryImpl repository = null;

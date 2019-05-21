@@ -7,7 +7,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.punishme
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.punishmentTypes.SuspensionRepository;
 
 import java.util.*;
-
+@Repository("SuspensionRepository")
 public class SuspensionRepositoryImpl implements SuspensionRepository {
 
     private static SuspensionRepositoryImpl repository = null;

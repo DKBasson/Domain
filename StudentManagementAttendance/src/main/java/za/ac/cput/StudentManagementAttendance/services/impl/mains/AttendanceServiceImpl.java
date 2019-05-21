@@ -3,15 +3,16 @@ package za.ac.cput.StudentManagementAttendance.services.impl.mains;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import za.ac.cput.StudentManagementAttendance.domain.mains.Attendance;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.AttendanceRepository;
 import za.ac.cput.StudentManagementAttendance.services.serviceinterfaces.mains.AttendanceService;
 
 import java.util.*;
-
+@Service("AttendanceServiceImpl")
 public class AttendanceServiceImpl implements AttendanceService{
     @Autowired
-    @Qualifier("InMemory")
+    @Qualifier("AttendanceRepositoryI")
     private AttendanceRepository repository;
 
     @Override

@@ -7,7 +7,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.Pe
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.PunishmentIfBunkedAlotRepository;
 
 import java.util.*;
-
+@Repository("PunishmentIfBunkedAlotRepository")
 public class PunishmentIfBunkedAlotRepositoryImpl implements PunishmentIfBunkedAlotRepository {
 
     private static PunishmentIfBunkedAlotRepositoryImpl repository = null;

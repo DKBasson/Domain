@@ -3,15 +3,16 @@ package za.ac.cput.StudentManagementAttendance.services.impl.StudentTypes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import za.ac.cput.StudentManagementAttendance.domain.StudentTypes.DDStudent;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentTypes.DDStudentRepository;
 import za.ac.cput.StudentManagementAttendance.services.serviceinterfaces.StudentTypes.DDStudentService;
 
 import java.util.*;
-
+@Service("DDStudentServiceImpl")
 public class DDStudentServiceImpl implements DDStudentService {
     @Autowired
-    @Qualifier("InMemory")
+    @Qualifier("DDStudentRepository")
     private DDStudentRepository repository;
 
     @Override

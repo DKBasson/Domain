@@ -3,15 +3,16 @@ package za.ac.cput.StudentManagementAttendance.services.impl.studentCommands;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import za.ac.cput.StudentManagementAttendance.domain.studentCommands.addStudent;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.addStudentRepository;
 import za.ac.cput.StudentManagementAttendance.services.serviceinterfaces.studentCommands.addStudentService;
 
 import java.util.*;
-
+@Service("addStudentServiceImpl")
 public class addStudentServiceImpl implements addStudentService {
     @Autowired
-    @Qualifier("InMemory")
+    @Qualifier("addStudentRepository")
     private addStudentRepository repository;
 
     @Override

@@ -1,18 +1,15 @@
 package za.ac.cput.StudentManagementAttendance.controller.mains;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.StudentManagementAttendance.domain.mains.Student;
-import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.StudentRepository;
 import za.ac.cput.StudentManagementAttendance.services.serviceinterfaces.mains.StudentService;
 
 import java.util.Set;
 @RestController
 @RequestMapping("/student")
 public class StudentController {
-    @Autowired
-    @Qualifier("StudentService")
+    @Qualifier("StudentServiceImpl")
     private StudentService service;
 
     @PostMapping("/create")

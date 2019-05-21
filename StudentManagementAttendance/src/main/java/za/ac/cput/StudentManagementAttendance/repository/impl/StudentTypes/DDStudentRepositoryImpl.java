@@ -10,7 +10,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentT
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 
 import java.util.*;
-
+@Repository("DDStudentRepository")
 public class DDStudentRepositoryImpl implements DDStudentRepository {
 
     private static DDStudentRepository repository = null;

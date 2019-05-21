@@ -7,7 +7,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.St
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.SubjectRepository;
 
 import java.util.*;
-
+@Repository("SubjectRepository")
 public class SubjectRepositoryImpl implements SubjectRepository {
 
     private static SubjectRepositoryImpl repository = null;

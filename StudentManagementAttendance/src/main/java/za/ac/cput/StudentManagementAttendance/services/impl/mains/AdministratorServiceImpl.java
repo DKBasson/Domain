@@ -3,15 +3,16 @@ package za.ac.cput.StudentManagementAttendance.services.impl.mains;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import za.ac.cput.StudentManagementAttendance.domain.mains.Administrator;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.AdministratorRepository;
 import za.ac.cput.StudentManagementAttendance.services.serviceinterfaces.mains.AdministratorService;
 
 import java.util.*;
-
+@Service("AdministratorServiceImpl")
 public class AdministratorServiceImpl implements AdministratorService{
     @Autowired
-    @Qualifier("InMemory")
+    @Qualifier("AdministratorRepository")
     private AdministratorRepository repository;
 
     @Override

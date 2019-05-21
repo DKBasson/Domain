@@ -8,7 +8,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentC
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentSponsorTypes.BusinessRepository;
 
 import java.util.*;
-
+@Repository("BusinessRepository")
 public class BusinessRepositoryImpl implements BusinessRepository {
 
     private static BusinessRepositoryImpl repository = null;

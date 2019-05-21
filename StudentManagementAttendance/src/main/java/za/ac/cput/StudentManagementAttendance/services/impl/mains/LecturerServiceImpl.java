@@ -3,15 +3,16 @@ package za.ac.cput.StudentManagementAttendance.services.impl.mains;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import za.ac.cput.StudentManagementAttendance.domain.mains.Lecturer;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.LecturerRepository;
 import za.ac.cput.StudentManagementAttendance.services.serviceinterfaces.mains.LecturerService;
 
 import java.util.*;
-
+@Service("LecturerServiceImpl")
 public class LecturerServiceImpl implements LecturerService {
     @Autowired
-    @Qualifier("InMemory")
+    @Qualifier("LecturerRepository")
     private LecturerRepository repository;
 
     @Override

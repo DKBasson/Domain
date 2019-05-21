@@ -5,7 +5,7 @@ import za.ac.cput.StudentManagementAttendance.domain.mains.HOD;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.HODRepository;
 
 import java.util.*;
-
+@Repository("HODRepository")
 public class HODRepositoryImpl implements HODRepository {
 
     private static HODRepositoryImpl repository = null;
