@@ -7,7 +7,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.Un
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.VenueRepository;
 
 import java.util.*;
-
+@Repository("VenueRepository")
 public class VenueRepositoryImpl implements VenueRepository {
 
     private static VenueRepositoryImpl repository = null;

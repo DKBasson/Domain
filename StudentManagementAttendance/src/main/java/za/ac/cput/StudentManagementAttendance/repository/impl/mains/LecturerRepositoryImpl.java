@@ -5,7 +5,7 @@ import za.ac.cput.StudentManagementAttendance.domain.mains.Lecturer;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.LecturerRepository;
 
 import java.util.*;
-
+@Repository("LecturerRepository")
 public class LecturerRepositoryImpl implements LecturerRepository {
 
     private static LecturerRepositoryImpl repository = null;

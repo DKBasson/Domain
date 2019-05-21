@@ -3,15 +3,16 @@ package za.ac.cput.StudentManagementAttendance.services.impl.mains;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import za.ac.cput.StudentManagementAttendance.domain.mains.University;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.UniversityRepository;
 import za.ac.cput.StudentManagementAttendance.services.serviceinterfaces.mains.UniversityService;
 
 import java.util.*;
-
+@Service("UniversityServiceImpl ")
 public class UniversityServiceImpl implements UniversityService {
     @Autowired
-    @Qualifier("InMemory")
+    @Qualifier("UniversityRepository")
     private UniversityRepository repository;
 
     @Override

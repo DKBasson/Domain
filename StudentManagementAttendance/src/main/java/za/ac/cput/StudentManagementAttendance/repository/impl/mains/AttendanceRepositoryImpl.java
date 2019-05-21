@@ -5,7 +5,7 @@ import za.ac.cput.StudentManagementAttendance.domain.mains.Attendance;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.AttendanceRepository;
 
 import java.util.*;
-
+@Repository("AttendanceRepositoryI")
 public class AttendanceRepositoryImpl implements AttendanceRepository {
 
     private static AttendanceRepositoryImpl repository = null;

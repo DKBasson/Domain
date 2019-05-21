@@ -8,7 +8,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.punishme
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.addStudentRepository;
 
 import java.util.*;
-
+@Repository("addStudentRepository")
 public class addStudentRepositoryImpl implements addStudentRepository {
 
     private static addStudentRepositoryImpl repository = null;

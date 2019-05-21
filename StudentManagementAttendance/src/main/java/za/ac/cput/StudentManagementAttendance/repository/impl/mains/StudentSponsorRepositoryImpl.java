@@ -7,7 +7,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.St
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.StudentSponsorRepository;
 
 import java.util.*;
-
+@Repository("StudentSponsorRepository")
 public class StudentSponsorRepositoryImpl implements StudentSponsorRepository {
 
     private static StudentSponsorRepositoryImpl repository = null;

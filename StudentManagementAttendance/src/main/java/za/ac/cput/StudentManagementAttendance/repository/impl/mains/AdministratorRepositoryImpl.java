@@ -5,7 +5,7 @@ import za.ac.cput.StudentManagementAttendance.domain.mains.Administrator;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.AdministratorRepository;
 
 import java.util.*;
-
+@Repository("AdministratorRepository")
 public class AdministratorRepositoryImpl implements AdministratorRepository {
 
     private static AdministratorRepositoryImpl repository = null;

@@ -3,15 +3,16 @@ package za.ac.cput.StudentManagementAttendance.services.impl.StudentPunishmentTy
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import za.ac.cput.StudentManagementAttendance.domain.StudentPunishmentTypes.ADStudentPunishment;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentPunishmentTypes.ADStudentPunishmentRepository;
 import za.ac.cput.StudentManagementAttendance.services.serviceinterfaces.StudentPunishmentTypes.ADStudentPunishmentService;
 
 import java.util.*;
-
+@Service("ADStudentPunishmentServiceImpl")
 public class ADStudentPunishmentServiceImpl implements ADStudentPunishmentService {
     @Autowired
-    @Qualifier("InMemory")
+    @Qualifier("ADStudentPunishmentRepository")
     private ADStudentPunishmentRepository repository;
 
     @Override

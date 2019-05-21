@@ -10,7 +10,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentP
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 
 import java.util.*;
-
+@Repository("MDStudentPunishmentRepository")
 public class MDStudentPunishmentRepositoryImpl implements MDStudentPunishmentRepository {
 
     private static MDStudentPunishmentRepositoryImpl repository = null;

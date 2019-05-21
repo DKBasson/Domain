@@ -8,7 +8,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentC
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentSponsorTypes.ParentRepository;
 
 import java.util.*;
-
+@Repository("ParentRepository")
 public class ParentRepositoryImpl implements  ParentRepository {
 
     private static ParentRepositoryImpl repository = null;

@@ -7,7 +7,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.Pu
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.StudentRepository;
 
 import java.util.*;
-@Repository("InMemory")
+@Repository("StudentRepository")
 public class StudentRepositoryImpl implements StudentRepository {
 
     private static StudentRepositoryImpl repository = null;

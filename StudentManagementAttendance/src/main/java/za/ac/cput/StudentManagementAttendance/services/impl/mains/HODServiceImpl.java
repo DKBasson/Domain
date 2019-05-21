@@ -3,15 +3,16 @@ package za.ac.cput.StudentManagementAttendance.services.impl.mains;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import za.ac.cput.StudentManagementAttendance.domain.mains.HOD;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.HODRepository;
 import za.ac.cput.StudentManagementAttendance.services.serviceinterfaces.mains.HODService;
 
 import java.util.*;
-
+@Service("HODServiceImpl")
 public class HODServiceImpl implements HODService {
     @Autowired
-    @Qualifier("InMemory")
+    @Qualifier("HODRepository")
     private HODRepository repository;
 
     @Override

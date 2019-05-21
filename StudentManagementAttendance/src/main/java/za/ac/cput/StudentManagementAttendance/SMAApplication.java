@@ -3,9 +3,12 @@ package za.ac.cput.StudentManagementAttendance;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestTemplate;
 
-
+@ComponentScan(basePackages = {"za.ac.cput.StudentManagementAttendance.controller",
+        "za.ac.cput.StudentManagementAttendance.services.impl",
+        "za.ac.cput.StudentManagementAttendance.repository.impl"})
 @SpringBootApplication
 public class SMAApplication {
 

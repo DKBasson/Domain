@@ -3,14 +3,15 @@ package za.ac.cput.StudentManagementAttendance.services.impl.mains;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import za.ac.cput.StudentManagementAttendance.domain.mains.PunishmentIfBunkedAlot;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.PunishmentIfBunkedAlotRepository;
 
 import java.util.*;
-
+@Service("PunishmentIfBunkedAlotServiceImpl")
 public class PunishmentIfBunkedAlotServiceImpl implements PunishmentIfBunkedAlotRepository {
     @Autowired
-    @Qualifier("InMemory")
+    @Qualifier("PunishmentIfBunkedAlotRepository")
     private PunishmentIfBunkedAlotRepository repository;
 
     @Override
