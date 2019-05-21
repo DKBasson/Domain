@@ -1,15 +1,13 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.StudentTypes;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.StudentTypes.ADStudent;
 import za.ac.cput.StudentManagementAttendance.domain.studentCommands.removeStudent;
 import za.ac.cput.StudentManagementAttendance.repository.impl.studentCommands.removeStudentRepositoryImpl;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentTypes.ADStudentRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class ADStudentRepositoryImpl implements ADStudentRepository {
 
@@ -17,7 +15,7 @@ public class ADStudentRepositoryImpl implements ADStudentRepository {
     private Map<String, ADStudent> students;
 
     private ADStudentRepositoryImpl() {
-        this.students = (Map<String, ADStudent>) new HashSet<>();
+        this.students = new HashMap<>();
     }
 
     public static ADStudentRepository getRepository(){

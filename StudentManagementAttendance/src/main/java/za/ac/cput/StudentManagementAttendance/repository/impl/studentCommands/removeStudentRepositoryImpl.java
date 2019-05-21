@@ -1,14 +1,12 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.studentCommands;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.studentCommands.addStudent;
 import za.ac.cput.StudentManagementAttendance.domain.studentCommands.removeStudent;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.addStudentRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class removeStudentRepositoryImpl implements removeStudentRepository {
 
@@ -16,7 +14,7 @@ public class removeStudentRepositoryImpl implements removeStudentRepository {
     private Map<String, removeStudent> students;
 
     private removeStudentRepositoryImpl() {
-        this.students = (Map<String, removeStudent>) new HashSet<>();
+        this.students = new HashMap<>();
     }
 
     public static removeStudentRepository getRepository(){

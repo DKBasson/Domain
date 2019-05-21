@@ -1,14 +1,12 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.mains;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.mains.Person;
 import za.ac.cput.StudentManagementAttendance.domain.mains.PunishmentIfBunkedAlot;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.PersonRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.PunishmentIfBunkedAlotRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class PunishmentIfBunkedAlotRepositoryImpl implements PunishmentIfBunkedAlotRepository {
 
@@ -16,7 +14,7 @@ public class PunishmentIfBunkedAlotRepositoryImpl implements PunishmentIfBunkedA
     private Map<String, PunishmentIfBunkedAlot> punishments;
 
     private PunishmentIfBunkedAlotRepositoryImpl() {
-        this.punishments = (Map<String, PunishmentIfBunkedAlot>) new HashSet<>();
+        this.punishments = new HashMap<>();
     }
 
     public static PunishmentIfBunkedAlotRepository getRepository(){

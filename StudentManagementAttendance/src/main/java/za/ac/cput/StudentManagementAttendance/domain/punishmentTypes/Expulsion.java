@@ -9,6 +9,7 @@ public class Expulsion extends PunishmentIfBunkedAlot {
     }
 
     public static class Builder extends PunishmentIfBunkedAlot.Builder {
+
         public Expulsion build(){
             return new Expulsion(this);
         }

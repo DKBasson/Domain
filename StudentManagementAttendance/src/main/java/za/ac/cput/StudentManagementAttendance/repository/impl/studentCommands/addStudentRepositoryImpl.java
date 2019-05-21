@@ -1,15 +1,13 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.studentCommands;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.punishmentTypes.Suspension;
 import za.ac.cput.StudentManagementAttendance.domain.studentCommands.addStudent;
 import za.ac.cput.StudentManagementAttendance.repository.impl.punishmentTypes.SuspensionRepositoryImpl;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.punishmentTypes.SuspensionRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.addStudentRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class addStudentRepositoryImpl implements addStudentRepository {
 
@@ -17,7 +15,7 @@ public class addStudentRepositoryImpl implements addStudentRepository {
     private Map<String, addStudent> students;
 
     private addStudentRepositoryImpl() {
-        this.students = (Map<String, addStudent>) new HashSet<>();
+        this.students = new HashMap<>();
     }
 
     public static addStudentRepository getRepository(){

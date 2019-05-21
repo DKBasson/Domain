@@ -22,11 +22,19 @@ public class Venue {
             this.venueNumber = venueNumber;
             return this;
         }
+        public Venue.Builder copy(Venue student){
+            this.venueNumber = student.venueNumber;
+
+
+
+            return this;
+        }
 
         public Venue build() {
             return new Venue(this);
         }
     }
+
 
     @Override
     public String toString() {

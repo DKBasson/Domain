@@ -1,12 +1,10 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.mains;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.mains.HOD;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.HODRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class HODRepositoryImpl implements HODRepository {
 
@@ -14,7 +12,7 @@ public class HODRepositoryImpl implements HODRepository {
     private Map<String, HOD> hodss;
 
     private HODRepositoryImpl() {
-        this.hodss = (Map<String, HOD>) new HashSet<>();
+        this.hodss = new HashMap<>();
     }
 
     public static HODRepository getRepository(){

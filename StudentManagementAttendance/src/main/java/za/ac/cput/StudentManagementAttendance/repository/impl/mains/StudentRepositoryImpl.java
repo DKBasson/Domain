@@ -1,22 +1,20 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.mains;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.mains.PunishmentIfBunkedAlot;
 import za.ac.cput.StudentManagementAttendance.domain.mains.Student;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.PunishmentIfBunkedAlotRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.StudentRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
+import java.util.*;
+@Repository("InMemory")
 public class StudentRepositoryImpl implements StudentRepository {
 
     private static StudentRepositoryImpl repository = null;
     private Map<String, Student> students;
 
     private StudentRepositoryImpl() {
-        this.students = (Map<String, Student>) new HashSet<>();
+        this.students = new HashMap<>();
     }
 
     public static StudentRepository getRepository(){

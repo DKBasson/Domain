@@ -1,5 +1,7 @@
 package za.ac.cput.StudentManagementAttendance.domain.mains;
 
+import java.util.Objects;
+
 public class Administrator {
     private String administratorName, administratorSurname;
     private String staffID;
@@ -53,6 +55,15 @@ public class Administrator {
             return this;
         }
 
+        public Administrator.Builder copy(Administrator student){
+            this.administratorName = student.administratorName;
+            this.administratorSurname = student.administratorSurname;
+            this.staffID = student.staffID;
+
+
+            return this;
+        }
+
         public Administrator build() {
             return new Administrator(this);
         }
@@ -67,5 +78,18 @@ public class Administrator {
                 ", administratorSurname='" + administratorSurname + '\'' +
                 ", staffID=" + staffID +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Administrator studentVar = (Administrator) o;
+        return staffID.equals(studentVar.staffID);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(staffID);
     }
 }

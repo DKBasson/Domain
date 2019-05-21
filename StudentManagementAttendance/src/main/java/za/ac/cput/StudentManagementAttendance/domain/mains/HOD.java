@@ -53,7 +53,16 @@ public class HOD {
             this.memberSurname = memberSurname;
             return this;
         }
+        public HOD.Builder copy(HOD student){
+            this.memberID = student.memberID;
+            this.memberName = student.memberName;
+            this.memberSurname = student.memberSurname;
 
+
+
+
+            return this;
+        }
         public HOD build() {
             return new HOD(this);
         }
