@@ -1,15 +1,13 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.studentSponsorTypes;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.studentCommands.removeStudent;
 import za.ac.cput.StudentManagementAttendance.domain.studentSponsorTypes.Parent;
 import za.ac.cput.StudentManagementAttendance.repository.impl.studentCommands.removeStudentRepositoryImpl;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentSponsorTypes.ParentRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class ParentRepositoryImpl implements  ParentRepository {
 
@@ -17,7 +15,7 @@ public class ParentRepositoryImpl implements  ParentRepository {
     private Map<String, Parent> students;
 
     private ParentRepositoryImpl() {
-        this.students = (Map<String, Parent>) new HashSet<>();
+        this.students = new HashMap<>();
     }
 
     public static ParentRepository getRepository(){

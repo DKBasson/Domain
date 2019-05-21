@@ -1,14 +1,12 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.punishmentTypes;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.punishmentTypes.Expulsion;
 import za.ac.cput.StudentManagementAttendance.domain.punishmentTypes.Suspension;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.punishmentTypes.ExpulsionRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.punishmentTypes.SuspensionRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class SuspensionRepositoryImpl implements SuspensionRepository {
 
@@ -16,7 +14,7 @@ public class SuspensionRepositoryImpl implements SuspensionRepository {
     private Map<String, Suspension> students;
 
     private SuspensionRepositoryImpl() {
-        this.students = (Map<String, Suspension>) new HashSet<>();
+        this.students = new HashMap<>();
     }
 
     public static SuspensionRepository getRepository(){

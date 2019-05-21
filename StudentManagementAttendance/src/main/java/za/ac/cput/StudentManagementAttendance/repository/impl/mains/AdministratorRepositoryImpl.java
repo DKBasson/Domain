@@ -4,18 +4,15 @@ import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.mains.Administrator;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.AdministratorRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-@Repository("InMemory")
+import java.util.*;
+
 public class AdministratorRepositoryImpl implements AdministratorRepository {
 
     private static AdministratorRepositoryImpl repository = null;
     private Map<String, Administrator> administrators;
 
     private AdministratorRepositoryImpl() {
-        this.administrators = (Map<String, Administrator>)new HashSet<>();
+        this.administrators = new HashMap<>();
     }
 
     public static AdministratorRepository getRepository(){

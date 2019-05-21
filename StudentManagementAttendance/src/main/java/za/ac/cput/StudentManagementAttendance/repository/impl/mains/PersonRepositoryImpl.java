@@ -1,12 +1,10 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.mains;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.mains.Person;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.PersonRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class PersonRepositoryImpl implements PersonRepository {
 
@@ -14,7 +12,7 @@ public class PersonRepositoryImpl implements PersonRepository {
     private Map<String, Person> persons;
 
     private PersonRepositoryImpl() {
-        this.persons = (Map<String, Person>) new HashSet<>();
+        this.persons = new HashMap<>();
     }
 
     public static PersonRepository getRepository(){

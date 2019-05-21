@@ -52,6 +52,15 @@ public class Lecturer {
             this.staffID = staffID;
             return this;
         }
+        public Lecturer.Builder copy(Lecturer student){
+            this.lecturerName = student.lecturerName;
+            this.lecturerSurname = student.lecturerSurname;
+            this.staffID = student.staffID;
+
+
+
+            return this;
+        }
 
         public Lecturer build() {
             return new Lecturer(this);

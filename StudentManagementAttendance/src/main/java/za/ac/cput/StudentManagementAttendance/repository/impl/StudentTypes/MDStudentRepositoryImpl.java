@@ -1,5 +1,6 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.StudentTypes;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.StudentTypes.BDStudent;
 import za.ac.cput.StudentManagementAttendance.domain.StudentTypes.MDStudent;
 import za.ac.cput.StudentManagementAttendance.domain.studentCommands.removeStudent;
@@ -8,10 +9,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentT
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentTypes.MDStudentRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class MDStudentRepositoryImpl implements MDStudentRepository {
 
@@ -19,7 +17,7 @@ public class MDStudentRepositoryImpl implements MDStudentRepository {
     private Map<String, MDStudent> students;
 
     private MDStudentRepositoryImpl() {
-        this.students = (Map<String, MDStudent>) new HashSet<>();
+        this.students = new HashMap<>();
     }
 
     public static MDStudentRepository getRepository(){

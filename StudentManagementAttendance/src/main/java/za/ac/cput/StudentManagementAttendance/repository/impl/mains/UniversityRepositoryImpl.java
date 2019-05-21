@@ -1,14 +1,12 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.mains;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.mains.Subject;
 import za.ac.cput.StudentManagementAttendance.domain.mains.University;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.SubjectRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.UniversityRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class UniversityRepositoryImpl implements UniversityRepository {
 
@@ -16,7 +14,7 @@ public class UniversityRepositoryImpl implements UniversityRepository {
     private Map<String, University> students;
 
     private UniversityRepositoryImpl() {
-        this.students = (Map<String, University>) new HashSet<>();
+        this.students =  new HashMap<>();
     }
 
     public static UniversityRepository getRepository(){

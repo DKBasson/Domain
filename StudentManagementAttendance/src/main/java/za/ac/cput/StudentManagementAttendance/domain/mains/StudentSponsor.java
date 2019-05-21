@@ -54,6 +54,15 @@ public class StudentSponsor {
             this.sponsorNum = sponsorNum;
             return this;
         }
+        public StudentSponsor.Builder copy(StudentSponsor student){
+            this.sName = student.sName;
+            this.sSurname = student.sSurname;
+            this.sponsorNum = student.sponsorNum;
+
+
+
+            return this;
+        }
 
         public StudentSponsor build() {
             return new StudentSponsor(this);

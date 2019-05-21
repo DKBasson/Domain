@@ -1,15 +1,13 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.studentSponsorTypes;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.studentCommands.removeStudent;
 import za.ac.cput.StudentManagementAttendance.domain.studentSponsorTypes.Business;
 import za.ac.cput.StudentManagementAttendance.repository.impl.studentCommands.removeStudentRepositoryImpl;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentSponsorTypes.BusinessRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class BusinessRepositoryImpl implements BusinessRepository {
 
@@ -17,7 +15,7 @@ public class BusinessRepositoryImpl implements BusinessRepository {
     private Map<String, Business> students;
 
     private BusinessRepositoryImpl() {
-        this.students = (Map<String, Business>) new HashSet<>();
+        this.students = new HashMap<>();
     }
 
     public static BusinessRepository getRepository(){

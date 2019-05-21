@@ -87,6 +87,16 @@ public class Student {
             return this;
         }
 
+        public Builder copy(Student student){
+            this.ssStudentNum = student.ssStudentNum;
+            this.sName = student.sName;
+            this.sSurname = student.sSurname;
+            this.datesNotAttended = student.datesNotAttended;
+            this.numNotAttended = student.numNotAttended;
+
+            return this;
+        }
+
         public Student build() {
             return new Student(this);
         }

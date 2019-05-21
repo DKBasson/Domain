@@ -52,6 +52,15 @@ public class University {
             this.universityID = universityID;
             return this;
         }
+        public University.Builder copy(University student){
+            this.universityName = student.universityName;
+            this.universityAddress = student.universityAddress;
+            this.universityID = student.universityID;
+
+
+
+            return this;
+        }
 
         public University build() {
             return new University(this);

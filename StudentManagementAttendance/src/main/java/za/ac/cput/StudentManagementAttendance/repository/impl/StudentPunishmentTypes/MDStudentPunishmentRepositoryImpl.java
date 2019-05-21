@@ -1,5 +1,6 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.StudentPunishmentTypes;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.StudentPunishmentTypes.DDStudentPunishment;
 import za.ac.cput.StudentManagementAttendance.domain.StudentPunishmentTypes.MDStudentPunishment;
 import za.ac.cput.StudentManagementAttendance.domain.studentCommands.removeStudent;
@@ -8,10 +9,7 @@ import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentP
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.StudentPunishmentTypes.MDStudentPunishmentRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.studentCommands.removeStudentRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class MDStudentPunishmentRepositoryImpl implements MDStudentPunishmentRepository {
 
@@ -19,7 +17,7 @@ public class MDStudentPunishmentRepositoryImpl implements MDStudentPunishmentRep
     private Map<String, MDStudentPunishment> students;
 
     private MDStudentPunishmentRepositoryImpl() {
-        this.students = (Map<String, MDStudentPunishment>) new HashSet<>();
+        this.students = new HashMap<>();
     }
 
     public static MDStudentPunishmentRepository getRepository(){

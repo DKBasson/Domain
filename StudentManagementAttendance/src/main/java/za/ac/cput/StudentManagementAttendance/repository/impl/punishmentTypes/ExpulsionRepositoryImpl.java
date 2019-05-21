@@ -1,15 +1,13 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.punishmentTypes;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.mains.Venue;
 import za.ac.cput.StudentManagementAttendance.domain.punishmentTypes.Expulsion;
 import za.ac.cput.StudentManagementAttendance.repository.impl.mains.VenueRepositoryImpl;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.VenueRepository;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.punishmentTypes.ExpulsionRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class ExpulsionRepositoryImpl implements ExpulsionRepository {
 
@@ -17,7 +15,7 @@ public class ExpulsionRepositoryImpl implements ExpulsionRepository {
     private Map<String, Expulsion> students;
 
     private ExpulsionRepositoryImpl() {
-        this.students = (Map<String, Expulsion>) new HashSet<>();
+        this.students = new HashMap<>();
     }
 
     public static ExpulsionRepository getRepository(){

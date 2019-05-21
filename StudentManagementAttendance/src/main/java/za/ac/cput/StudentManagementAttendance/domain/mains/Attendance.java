@@ -1,6 +1,8 @@
 package za.ac.cput.StudentManagementAttendance.domain.mains;
 
-    public class Attendance {
+import java.util.Objects;
+
+public class Attendance {
         private String studentID;
         private int daysMissed;
 
@@ -39,6 +41,14 @@ package za.ac.cput.StudentManagementAttendance.domain.mains;
                 this.daysMissed = daysMissed;
                 return this;
             }
+            public Attendance.Builder copy(Attendance student){
+                this.daysMissed = student.daysMissed;
+                this.studentID = student.studentID;
+
+
+
+                return this;
+            }
 
             public Attendance build() {
                 return new Attendance(this);
@@ -52,6 +62,21 @@ package za.ac.cput.StudentManagementAttendance.domain.mains;
                     ", daysMissed=" + daysMissed +
                     '}';
         }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Attendance studentVar = (Attendance) o;
+        return studentID.equals(studentVar.studentID);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(studentID);
+    }
+}
+
 
 

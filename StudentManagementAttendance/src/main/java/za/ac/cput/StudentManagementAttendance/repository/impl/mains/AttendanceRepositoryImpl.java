@@ -1,12 +1,10 @@
 package za.ac.cput.StudentManagementAttendance.repository.impl.mains;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.StudentManagementAttendance.domain.mains.Attendance;
 import za.ac.cput.StudentManagementAttendance.repository.repointerfaces.mains.AttendanceRepository;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class AttendanceRepositoryImpl implements AttendanceRepository {
 
@@ -14,7 +12,7 @@ public class AttendanceRepositoryImpl implements AttendanceRepository {
     private Map<String, Attendance> attendances;
 
     private AttendanceRepositoryImpl() {
-        this.attendances = (Map<String, Attendance>) new HashSet<>();
+        this.attendances = new HashMap<>();
     }
 
     public static AttendanceRepository getRepository(){

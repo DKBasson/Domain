@@ -39,6 +39,14 @@ package za.ac.cput.StudentManagementAttendance.domain.mains;
                 this.punishmentID = punishmentID;
                 return this;
             }
+            public PunishmentIfBunkedAlot.Builder copy(PunishmentIfBunkedAlot student){
+                this.studentID = student.studentID;
+                this.punishmentID = student.punishmentID;
+
+
+
+                return this;
+            }
 
             public PunishmentIfBunkedAlot build() {
                 return new PunishmentIfBunkedAlot(this);
