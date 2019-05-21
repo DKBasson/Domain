@@ -35,6 +35,14 @@ public class Person {
             this.personSurname = personSurname;
             return this;
         }
+        public Person.Builder copy(Person student){
+            this.personName = student.personName;
+            this.personSurname = student.personSurname;
+
+
+
+            return this;
+        }
         public Person build(){
             return new Person(this);
         }
