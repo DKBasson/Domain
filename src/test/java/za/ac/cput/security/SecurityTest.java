@@ -1,5 +1,6 @@
 package za.ac.cput.security;
 
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import za.ac.cput.domain.users.Person;
 import za.ac.cput.factory.users.PersonFactory;
-
 import static junit.framework.TestCase.assertEquals;
 
 @RunWith(SpringRunner.class)
@@ -20,15 +20,14 @@ public class SecurityTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
-
-    private String baseURL="http://localhost:8080/person";
+    private String baseURL = "http://localhost:8080/administrator";
 
     @Autowired
 
     @Before
     public void addDummyData(){
 
-        Person person = PersonFactory.getPerson( "216183006", "Deklerk", "Basson", "deklerk@dkbasson.com");
+        Person person = PersonFactory.getPerson("216183006","Deklerk", "Basson", "deklerk@dkbasson.com");
 
         ResponseEntity<Person> postResponse = restTemplate.postForEntity(baseURL + "/new", person, Person.class);
 

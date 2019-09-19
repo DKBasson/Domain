@@ -23,8 +23,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .password(encoder().encode("admin"))
                 .roles(ADMIN_ROLE)
                 .and()
-                .withUser("users")
-                .password(encoder().encode("users"))
+                .withUser("user")
+                .password(encoder().encode("user"))
                 .roles(USER_ROLE);
 
     }
@@ -44,7 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder encoder(){
-       return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder();
     }
 
 

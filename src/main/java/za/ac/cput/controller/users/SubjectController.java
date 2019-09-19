@@ -1,7 +1,7 @@
 package za.ac.cput.controller.users;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.users.Subject;
 import za.ac.cput.service.users.impl.SubjectServiceImpl;
@@ -13,33 +13,38 @@ import java.util.Set;
 public class SubjectController {
 
     @Autowired
-    private SubjectServiceImpl subjectService;
+    @Qualifier("SubjectServiceImpl")
+    private SubjectServiceImpl service;
 
-    @PostMapping
-    public Subject create(@RequestBody Subject t){
-        return subjectService.create(t);
+    @PostMapping("/new")
+    public Subject create(@RequestBody Subject subject){
+
+        return service.create(subject);
     }
 
     @GetMapping(path = "/find/{id}")
     public Subject findById(@PathVariable String id){
-        return subjectService.read(id);
+
+        Subject subject = service.read(id);
+
+        return subject;
     }
 
     @PutMapping("/update")
-    public Subject update(@RequestBody Subject t){
-        return subjectService.update(t);
+    public void update(@RequestBody Subject subject){
+
+        service.update(subject);
+
     }
 
     @DeleteMapping(path = "/delete/{id}")
     public void delete(@PathVariable String id){
-
-        subjectService.delete(id);
-
+        service.delete(id);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/getall")
     public Set<Subject> getAll(){
-        return subjectService.getAll();
+        return service.getAll();
     }
 
 }

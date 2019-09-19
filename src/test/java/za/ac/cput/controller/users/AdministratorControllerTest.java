@@ -1,5 +1,6 @@
 package za.ac.cput.controller.users;
 
+
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,26 +14,24 @@ import org.springframework.web.client.HttpClientErrorException;
 import za.ac.cput.domain.users.Administrator;
 import za.ac.cput.factory.users.AdministratorFactory;
 
-import static org.junit.Assert.*;
+import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertNotNull;
+
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AdministratorControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
-
-    private String baseURL="http://localhost:8080/employee/administrator";
+    private String baseURL = "http://localhost:8080/administrator";
 
     @Test
     public void a_create() {
 
-        Administrator administrator = AdministratorFactory.getAdministrator("TestID", "TestName", "TestLastName", "TestEmail");
-        administrator.setUserID("TestID");
-        assertNotNull(administrator);
-
+        Administrator administrator = AdministratorFactory.getAdministrator("216183006", "Deklerk", "Basson", "deklerk@dkbasson.com");
+        administrator.setUserID("216183006");
         ResponseEntity<Administrator> postResponse = restTemplate.postForEntity(baseURL + "/new", administrator, Administrator.class);
-
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());
         System.out.println(postResponse.getBody());
@@ -42,40 +41,33 @@ public class AdministratorControllerTest {
     @Test
     public void b_findById() {
 
-        Administrator administrator = restTemplate.getForObject(baseURL + "/find/" + "TestID", Administrator.class);
-        System.out.println(restTemplate.getForObject(baseURL + "/find/" + "TestID", Administrator.class));
+        Administrator administrator = restTemplate.getForObject(baseURL + "/find/" + "216183006", Administrator.class);
         assertNotNull(administrator);
-        System.out.println(administrator);
+        System.out.println(administrator.getFirstName());
 
     }
 
     @Test
     public void c_update() {
 
-        Administrator administrator = restTemplate.getForObject(baseURL + "/find/" + "TestID", Administrator.class);
+        Administrator administrator = restTemplate.getForObject(baseURL + "/find/" + "216183006", Administrator.class);
         administrator.setFirstName("Derek");
-
-        restTemplate.put(baseURL + "/update/" + "TestID", administrator);
-
-        Administrator updatedAdministrator = restTemplate.getForObject(baseURL + "/update/" + "TestID", Administrator.class);
-
-        assertNotNull(updatedAdministrator);
-        System.out.println(updatedAdministrator);
+        restTemplate.put(baseURL + "/update/" + "216183006", administrator);
+        Administrator updatedAdministrator = restTemplate.getForObject(baseURL + "/update/" + "216183006", Administrator.class);
+        assertNotNull(administrator);
+        System.out.println(administrator);
 
     }
 
     @Test
     public void e_delete() {
 
-        int id = 1;
-        Administrator administrator = restTemplate.getForObject(baseURL + "/find/" + "TestID", Administrator.class);
+        Administrator administrator = restTemplate.getForObject(baseURL + "/find/" + "216183006", Administrator.class);
         assertNotNull(administrator);
-
-        restTemplate.delete(baseURL + "/delete/" + "TestID");
-        System.out.println("Deleted");
+        restTemplate.delete(baseURL + "/delete/" + "216183006");
 
         try {
-            administrator = restTemplate.getForObject(baseURL + "/find/" + "TestID", Administrator.class);
+            administrator = restTemplate.getForObject(baseURL + "/find/" + "216183006", Administrator.class);
         } catch (final HttpClientErrorException e) {
             assertEquals(e.getStatusCode(), HttpStatus.NOT_FOUND);
         }
@@ -86,13 +78,12 @@ public class AdministratorControllerTest {
     public void d_getAll() {
 
         HttpHeaders headers = new HttpHeaders();
-
         HttpEntity<String> entity = new HttpEntity<String>(null, headers);
-
-        ResponseEntity<String> response = restTemplate.exchange(baseURL + "/getAll", HttpMethod.GET, entity, String.class);
-
+        ResponseEntity<String> response = restTemplate.exchange(baseURL + "/getall", HttpMethod.GET, entity, String.class);
         assertNotNull(response.getBody());
         System.out.println(response.getBody());
 
     }
+
+
 }

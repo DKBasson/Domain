@@ -1,7 +1,7 @@
 package za.ac.cput.controller.users;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.users.Lecturer;
 import za.ac.cput.service.users.impl.LecturerServiceImpl;
@@ -13,33 +13,38 @@ import java.util.Set;
 public class LecturerController {
 
     @Autowired
-    private LecturerServiceImpl lecturerService;
+    @Qualifier("LecturerServiceImpl")
+    private LecturerServiceImpl service;
 
-    @PostMapping
-    public Lecturer create(@RequestBody Lecturer t){
-        return lecturerService.create(t);
+    @PostMapping("/new")
+    public Lecturer create(@RequestBody Lecturer lecturer){
+
+        return service.create(lecturer);
     }
 
     @GetMapping(path = "/find/{id}")
     public Lecturer findById(@PathVariable String id){
-        return lecturerService.read(id);
+
+        Lecturer lecturer = service.read(id);
+
+        return lecturer;
     }
 
     @PutMapping("/update")
-    public Lecturer update(@RequestBody Lecturer t){
-        return lecturerService.update(t);
+    public void update(@RequestBody Lecturer lecturer){
+
+        service.update(lecturer);
+
     }
 
     @DeleteMapping(path = "/delete/{id}")
     public void delete(@PathVariable String id){
-
-        lecturerService.delete(id);
-
+        service.delete(id);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/getall")
     public Set<Lecturer> getAll(){
-        return lecturerService.getAll();
+        return service.getAll();
     }
 
 }

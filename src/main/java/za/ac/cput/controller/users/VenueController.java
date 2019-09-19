@@ -1,7 +1,7 @@
 package za.ac.cput.controller.users;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.users.Venue;
 import za.ac.cput.service.users.impl.VenueServiceImpl;
@@ -13,33 +13,38 @@ import java.util.Set;
 public class VenueController {
 
     @Autowired
-    private VenueServiceImpl venueService;
+    @Qualifier("VenueServiceImpl")
+    private VenueServiceImpl service;
 
-    @PostMapping
-    public Venue create(@RequestBody Venue t){
-        return venueService.create(t);
+    @PostMapping("/new")
+    public Venue create(@RequestBody Venue venue){
+
+        return service.create(venue);
     }
 
     @GetMapping(path = "/find/{id}")
     public Venue findById(@PathVariable String id){
-        return venueService.read(id);
+
+        Venue venue = service.read(id);
+
+        return venue;
     }
 
     @PutMapping("/update")
-    public Venue update(@RequestBody Venue t){
-        return venueService.update(t);
+    public void update(@RequestBody Venue venue){
+
+        service.update(venue);
+
     }
 
     @DeleteMapping(path = "/delete/{id}")
     public void delete(@PathVariable String id){
-
-        venueService.delete(id);
-
+        service.delete(id);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/getall")
     public Set<Venue> getAll(){
-        return venueService.getAll();
+        return service.getAll();
     }
 
 }

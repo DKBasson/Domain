@@ -1,119 +1,50 @@
 package za.ac.cput.controller.users;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.*;
+import za.ac.cput.domain.users.HOD;
+import za.ac.cput.service.users.impl.HODServiceImpl;
+
+import java.util.Set;
+
+@RestController
+@RequestMapping("/hod")
 public class HODController {
-    private String userID, firstName, lastName, email;
 
-    public HODController(Builder builder) {
-        this.userID = builder.userID;
-        this.firstName = builder.firstName;
-        this.lastName = builder.lastName;
-        this.email = builder.email;
+    @Autowired
+    @Qualifier("HODServiceImpl")
+    private HODServiceImpl service;
+
+    @PostMapping("/new")
+    public HOD create(@RequestBody HOD hod){
+
+        return service.create(hod);
     }
 
-    public HODController(){
+    @GetMapping(path = "/find/{id}")
+    public HOD findById(@PathVariable String id){
+
+        HOD hod = service.read(id);
+
+        return hod;
+    }
+
+    @PutMapping("/update")
+    public void update(@RequestBody HOD hod){
+
+        service.update(hod);
 
     }
 
-    public String getUserID() {
-        return userID;
+    @DeleteMapping(path = "/delete/{id}")
+    public void delete(@PathVariable String id){
+        service.delete(id);
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    @GetMapping("/getall")
+    public Set<HOD> getAll(){
+        return service.getAll();
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    public static class Builder{
-        private String userID, firstName, lastName, email;
-
-        public Builder userID(String userID){
-            this.userID = userID;
-            return this;
-        }
-
-        public Builder firstName(String firstName){
-            this.firstName = firstName;
-            return this;
-        }
-
-        public Builder lastName(String lastName){
-            this.lastName = lastName;
-            return this;
-        }
-
-        public Builder email(String email){
-            this.email = email;
-            return this;
-        }
-
-        public HODController.Builder copy(HODController hod){
-            this.userID = hod.userID;
-            this.firstName = hod.firstName;
-            this.lastName = hod.lastName;
-            this.email = hod.email;
-            return this;
-        }
-
-        public HODController build(){
-            return new HODController(this);
-        }
-    }
-
-    @Override
-    public String toString() {
-        return "HODFactory{" +
-                "userID='" + userID + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof HODController)) return false;
-
-        HODController hod = (HODController) o;
-
-        if (getUserID() != null ? !getUserID().equals(hod.getUserID()) : hod.getUserID() != null) return false;
-        if (getFirstName() != null ? !getFirstName().equals(hod.getFirstName()) : hod.getFirstName() != null)
-            return false;
-        if (getLastName() != null ? !getLastName().equals(hod.getLastName()) : hod.getLastName() != null)
-            return false;
-        return getEmail() != null ? getEmail().equals(hod.getEmail()) : hod.getEmail() == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = getUserID() != null ? getUserID().hashCode() : 0;
-        result = 31 * result + (getFirstName() != null ? getFirstName().hashCode() : 0);
-        result = 31 * result + (getLastName() != null ? getLastName().hashCode() : 0);
-        result = 31 * result + (getEmail() != null ? getEmail().hashCode() : 0);
-        return result;
-    }
 }
-
-

@@ -1,7 +1,7 @@
 package za.ac.cput.controller.users;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.users.StudentSponsor;
 import za.ac.cput.service.users.impl.StudentSponsorServiceImpl;
@@ -13,33 +13,38 @@ import java.util.Set;
 public class StudentSponsorController {
 
     @Autowired
-    private StudentSponsorServiceImpl studentSponsorService;
+    @Qualifier("StudentSponsorServiceImpl")
+    private StudentSponsorServiceImpl service;
 
-    @PostMapping
-    public StudentSponsor create(@RequestBody StudentSponsor t){
-        return studentSponsorService.create(t);
+    @PostMapping("/new")
+    public StudentSponsor create(@RequestBody StudentSponsor studentSponsor){
+
+        return service.create(studentSponsor);
     }
 
     @GetMapping(path = "/find/{id}")
     public StudentSponsor findById(@PathVariable String id){
-        return studentSponsorService.read(id);
+
+        StudentSponsor studentSponsor = service.read(id);
+
+        return studentSponsor;
     }
 
     @PutMapping("/update")
-    public StudentSponsor update(@RequestBody StudentSponsor t){
-        return studentSponsorService.update(t);
+    public void update(@RequestBody StudentSponsor studentSponsor){
+
+        service.update(studentSponsor);
+
     }
 
     @DeleteMapping(path = "/delete/{id}")
     public void delete(@PathVariable String id){
-
-        studentSponsorService.delete(id);
-
+        service.delete(id);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/getall")
     public Set<StudentSponsor> getAll(){
-        return studentSponsorService.getAll();
+        return service.getAll();
     }
 
 }

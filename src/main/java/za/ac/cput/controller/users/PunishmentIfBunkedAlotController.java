@@ -1,7 +1,7 @@
 package za.ac.cput.controller.users;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.users.PunishmentIfBunkedAlot;
 import za.ac.cput.service.users.impl.PunishmentIfBunkedAlotServiceImpl;
@@ -13,33 +13,38 @@ import java.util.Set;
 public class PunishmentIfBunkedAlotController {
 
     @Autowired
-    private PunishmentIfBunkedAlotServiceImpl punishmentIfBunkedAlotService;
+    @Qualifier("PunishmentIfBunkedAlotServiceImpl")
+    private PunishmentIfBunkedAlotServiceImpl service;
 
-    @PostMapping
-    public PunishmentIfBunkedAlot create(@RequestBody PunishmentIfBunkedAlot t){
-        return punishmentIfBunkedAlotService.create(t);
+    @PostMapping("/new")
+    public PunishmentIfBunkedAlot create(@RequestBody PunishmentIfBunkedAlot punishmentIfBunkedAlot){
+
+        return service.create(punishmentIfBunkedAlot);
     }
 
     @GetMapping(path = "/find/{id}")
     public PunishmentIfBunkedAlot findById(@PathVariable String id){
-        return punishmentIfBunkedAlotService.read(id);
+
+        PunishmentIfBunkedAlot punishmentIfBunkedAlot = service.read(id);
+
+        return punishmentIfBunkedAlot;
     }
 
     @PutMapping("/update")
-    public PunishmentIfBunkedAlot update(@RequestBody PunishmentIfBunkedAlot t){
-        return punishmentIfBunkedAlotService.update(t);
+    public void update(@RequestBody PunishmentIfBunkedAlot punishmentIfBunkedAlot){
+
+        service.update(punishmentIfBunkedAlot);
+
     }
 
     @DeleteMapping(path = "/delete/{id}")
     public void delete(@PathVariable String id){
-
-        punishmentIfBunkedAlotService.delete(id);
-
+        service.delete(id);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/getall")
     public Set<PunishmentIfBunkedAlot> getAll(){
-        return punishmentIfBunkedAlotService.getAll();
+        return service.getAll();
     }
 
 }

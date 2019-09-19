@@ -1,7 +1,7 @@
 package za.ac.cput.controller.users;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.users.University;
 import za.ac.cput.service.users.impl.UniversityServiceImpl;
@@ -13,33 +13,38 @@ import java.util.Set;
 public class UniversityController {
 
     @Autowired
-    private UniversityServiceImpl universityService;
+    @Qualifier("UniversityServiceImpl")
+    private UniversityServiceImpl service;
 
-    @PostMapping
-    public University create(@RequestBody University t){
-        return universityService.create(t);
+    @PostMapping("/new")
+    public University create(@RequestBody University university){
+
+        return service.create(university);
     }
 
     @GetMapping(path = "/find/{id}")
     public University findById(@PathVariable String id){
-        return universityService.read(id);
+
+        University university = service.read(id);
+
+        return university;
     }
 
     @PutMapping("/update")
-    public University update(@RequestBody University t){
-        return universityService.update(t);
+    public void update(@RequestBody University university){
+
+        service.update(university);
+
     }
 
     @DeleteMapping(path = "/delete/{id}")
     public void delete(@PathVariable String id){
-
-        universityService.delete(id);
-
+        service.delete(id);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/getall")
     public Set<University> getAll(){
-        return universityService.getAll();
+        return service.getAll();
     }
 
 }

@@ -12,7 +12,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="DeklerkBassonCapstoneProject2019" target="1.8" />
-      <module name="Domain" target="1.8" />
+      <module name="Domain" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

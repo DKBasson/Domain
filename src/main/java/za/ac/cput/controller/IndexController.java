@@ -10,7 +10,7 @@ public class IndexController {
     @GetMapping("/")
     @ResponseBody
     public String homePage(){
-        return "Home";
+        return "Welcome to Deklerk Bassons Capstone Project";
     }
 
 }

@@ -1,7 +1,7 @@
 package za.ac.cput.controller.users;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.users.Administrator;
 import za.ac.cput.service.users.impl.AdministratorServiceImpl;
@@ -13,33 +13,38 @@ import java.util.Set;
 public class AdministratorController {
 
     @Autowired
-    private AdministratorServiceImpl administratorService;
+    @Qualifier("AdministratorServiceImpl")
+    private AdministratorServiceImpl service;
 
-    @PostMapping
-    public Administrator create(@RequestBody Administrator t){
-        return administratorService.create(t);
+    @PostMapping("/new")
+    public Administrator create(@RequestBody Administrator administrator){
+
+        return service.create(administrator);
     }
 
     @GetMapping(path = "/find/{id}")
     public Administrator findById(@PathVariable String id){
-        return administratorService.read(id);
+
+        Administrator administrator = service.read(id);
+
+        return administrator;
     }
 
     @PutMapping("/update")
-    public Administrator update(@RequestBody Administrator t){
-        return administratorService.update(t);
+    public void update(@RequestBody Administrator administrator){
+
+        service.update(administrator);
+
     }
 
     @DeleteMapping(path = "/delete/{id}")
     public void delete(@PathVariable String id){
-
-        administratorService.delete(id);
-
+        service.delete(id);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/getall")
     public Set<Administrator> getAll(){
-        return administratorService.getAll();
+        return service.getAll();
     }
 
 }

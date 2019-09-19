@@ -1,7 +1,7 @@
 package za.ac.cput.controller.users;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.users.Attendance;
 import za.ac.cput.service.users.impl.AttendanceServiceImpl;
@@ -13,33 +13,38 @@ import java.util.Set;
 public class AttendanceController {
 
     @Autowired
-    private AttendanceServiceImpl attendanceService;
+    @Qualifier("AttendanceServiceImpl")
+    private AttendanceServiceImpl service;
 
-    @PostMapping
-    public Attendance create(@RequestBody Attendance t){
-        return attendanceService.create(t);
+    @PostMapping("/new")
+    public Attendance create(@RequestBody Attendance attendance){
+
+        return service.create(attendance);
     }
 
     @GetMapping(path = "/find/{id}")
     public Attendance findById(@PathVariable String id){
-        return attendanceService.read(id);
+
+        Attendance attendance = service.read(id);
+
+        return attendance;
     }
 
     @PutMapping("/update")
-    public Attendance update(@RequestBody Attendance t){
-        return attendanceService.update(t);
+    public void update(@RequestBody Attendance attendance){
+
+        service.update(attendance);
+
     }
 
     @DeleteMapping(path = "/delete/{id}")
     public void delete(@PathVariable String id){
-
-        attendanceService.delete(id);
-
+        service.delete(id);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/getall")
     public Set<Attendance> getAll(){
-        return attendanceService.getAll();
+        return service.getAll();
     }
 
 }
