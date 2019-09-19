@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f94a6f09-ea07-43da-a6f9-362b3f446b21" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StudentManagementAttendance/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/security/SecurityConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/security/SecurityConfiguration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/za/ac/cput/controller/users/AdministratorControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/za/ac/cput/controller/users/AdministratorControllerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,32 +16,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LecturerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/controller/users/LecturerController.java">
+      <file leaf-file-name="AdministratorControllerTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/controller/users/AdministratorControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/controller/users/PersonController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PunishmentIfBunkedAlotController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/controller/users/PunishmentIfBunkedAlotController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-              <folding />
+            <state relative-caret-position="386">
+              <caret line="81" column="86" lean-forward="false" selection-start-line="81" selection-start-column="86" selection-end-line="81" selection-end-column="86" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2980#2988#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,6 +35,18 @@
             <state relative-caret-position="414">
               <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecurityTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/security/SecurityTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="38" column="86" lean-forward="false" selection-start-line="38" selection-start-column="86" selection-end-line="38" selection-end-column="86" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,14 +91,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecurityConfiguration.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SecurityConfiguration.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/security/SecurityConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+            <state relative-caret-position="470">
+              <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VenueRepositoryTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/repository/users/VenueRepositoryTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -168,7 +172,6 @@
         <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/controller/users/AdministratorController.java" />
         <option value="$PROJECT_DIR$/src/test/java/za/ac/cput/security/SecurityTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/za/ac/cput/controller/users/AdministratorControllerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/za/ac/cput/controller/users/AttendanceControllerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/za/ac/cput/controller/users/HODControllerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/za/ac/cput/controller/users/LecturerControllerTest.java" />
@@ -190,6 +193,7 @@
         <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/controller/users/UniversityController.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/controller/users/VenueController.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/security/SecurityConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/test/java/za/ac/cput/controller/users/AdministratorControllerTest.java" />
       </list>
     </option>
   </component>
@@ -402,7 +406,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.App (1)">
+  <component name="RunManager" selected="JUnit.All in Domain">
     <configuration name="AdministratorControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -417,6 +421,26 @@
       <option name="MAIN_CLASS_NAME" value="za.ac.cput.controller.users.AdministratorControllerTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="All in Domain" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Domain" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -589,45 +613,20 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="za.ac.cput.controller.users in Domain" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="za.ac.cput.controller.users.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Domain" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="za.ac.cput.controller.users" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.App (1)" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.za.ac.cput.controller.users in Domain" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SecurityTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.AdministratorControllerTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.za.ac.cput in Domain" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.SecurityTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.AdministratorControllerTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.za.ac.cput in Domain" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.All in Domain" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Spring Boot.App (1)" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.za.ac.cput in Domain" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SecurityTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.AdministratorControllerTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.za.ac.cput.controller.users in Domain" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.All in Domain" />
+        <item index="1" class="java.lang.String" itemvalue="Spring Boot.App (1)" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.AdministratorControllerTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.za.ac.cput in Domain" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SecurityTest" />
       </list>
     </recent_temporary>
   </component>
@@ -642,7 +641,7 @@
       <option name="presentableId" value="Default" />
       <updated>1568838408366</updated>
       <workItem from="1568838411084" duration="13055000" />
-      <workItem from="1568851536174" duration="7772000" />
+      <workItem from="1568851536174" duration="8211000" />
     </task>
     <servers />
   </component>
@@ -659,11 +658,11 @@
     <history-entry file="AdministratorControllerTest - 2019.09.19 at 21h 15m 55s.xml">
       <configuration name="AdministratorControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SecurityTest - 2019.09.19 at 20h 54m 38s.xml">
-      <configuration name="SecurityTest" configurationId="JUnit" />
+    <history-entry file="AdministratorControllerTest - 2019.09.19 at 21h 36m 01s.xml">
+      <configuration name="AdministratorControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SecurityTest - 2019.09.19 at 20h 59m 29s.xml">
-      <configuration name="SecurityTest" configurationId="JUnit" />
+    <history-entry file="All_in_Domain - 2019.09.19 at 21h 37m 21s.xml">
+      <configuration name="All in Domain" configurationId="JUnit" />
     </history-entry>
     <history-entry file="SecurityTest - 2019.09.19 at 21h 02m 13s.xml">
       <configuration name="SecurityTest" configurationId="JUnit" />
@@ -679,11 +678,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20827000" />
+    <option name="totallyTimeSpent" value="21266000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -692,10 +690,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="-1" side_tool="false" content_ui="combo" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="-1" side_tool="false" content_ui="combo" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -729,13 +727,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/service/users/PersonServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="87" column="1" lean-forward="false" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/service/users/PunishmentIfBunkedAlotServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
@@ -916,27 +907,6 @@
           <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/security/SecurityTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="29" column="102" lean-forward="false" selection-start-line="29" selection-start-column="102" selection-end-line="29" selection-end-column="102" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/controller/users/AdministratorControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2980#2988#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1142,12 +1112,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/repository/users/VenueRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/security/SecurityConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        <state relative-caret-position="470">
+          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/security/SecurityTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="38" column="86" lean-forward="false" selection-start-line="38" selection-start-column="86" selection-end-line="38" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/controller/users/AdministratorControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="81" column="86" lean-forward="false" selection-start-line="81" selection-start-column="86" selection-end-line="81" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2980#2988#0" expanded="true" />
           </folding>
         </state>
       </provider>
