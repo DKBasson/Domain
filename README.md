@@ -1,4 +1,4 @@
-<h1>**IMPORTANT!!!!** GO TO http://localhost:8080/administrator/getall TO TEST SECURITY</h1>
+<h1>GO TO http://localhost:8080/ TO TEST UI</h1>
 
 <h1>Domain Selection</h1>
 
