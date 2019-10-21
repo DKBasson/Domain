@@ -6,7 +6,6 @@ import za.ac.cput.domain.users.Employee;
 
 
 @Repository
-public interface EmployeeRepository 
-			extends CrudRepository<Employee, Long> {
+public interface EmployeeRepository extends CrudRepository<Employee, Long> {
 
 }
